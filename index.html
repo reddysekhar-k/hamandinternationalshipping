@@ -1,0 +1,2581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        crossorigin="anonymous"></script>
+
+      
+
+
+    <!-- Your Custom JS -->
+     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/favicon (3).ico" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;family=Rubik:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/356940580b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="lib/cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+    <link href="lib/cdn.jsdelivr.net/npm/bootstrap-icons%401.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+      /* 
+    ================================
+        Best Viewed In Full Page
+    ================================
+*/
+
+      /* Hover over a card to flip, can tab too. */
+
+      @import url("https://fonts.googleapis.com/css?family=Lato");
+
+     
+
+      /* body */
+      .flip {
+        min-height: 100vh;
+        padding: 40px;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        background: hsl(220, 10%, 12%);
+        font-family: "Lato", "poppies", -apple-system, BlinkMacSystemFont,
+          sans-serif;
+      }
+
+      /* .flip-card-container */
+      .flip-card-container {
+        --hue: 150;
+        --primary: hsl(var(--hue), 50%, 50%);
+        --white-1: hsl(0, 0%, 90%);
+        --white-2: hsl(0, 0%, 80%);
+        --dark: hsl(var(--hue), 25%, 10%);
+        --grey: hsl(0, 0%, 50%);
+
+        width: 310px;
+        height: 500px;
+        margin: 40px;
+
+        perspective: 1000px;
+      }
+
+      /* .flip-card */
+      .flip-card {
+        width: inherit;
+        height: inherit;
+
+        position: relative;
+        transform-style: preserve-3d;
+        transition: 0.6s 0.1s;
+      }
+
+      /* hover and focus-within states */
+      .flip-card-container:hover .flip-card,
+      .flip-card-container:focus-within .flip-card {
+        transform: rotateY(180deg);
+      }
+
+      /* .card-... */
+      .card-front,
+      .card-back {
+        width: 100%;
+        height: 100%;
+        border-radius: 24px;
+
+        background: var(--dark);
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+
+        backface-visibility: hidden;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* .card-front */
+      .card-front {
+        transform: rotateY(0deg);
+        z-index: 2;
+      }
+
+      /* .card-back */
+      .card-back {
+        transform: rotateY(180deg);
+        z-index: 1;
+      }
+
+      /* figure */
+      figure {
+        z-index: -1;
+      }
+
+      /* figure, .img-bg */
+      figure,
+      .img-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+      }
+
+      /* img */
+      img {
+        height: 100%;
+        border-radius: 24px;
+      }
+
+      /* figcaption */
+      figcaption {
+        display: block;
+
+        width: auto;
+        margin-top: 12%;
+        padding: 8px 22px;
+
+        font-weight: bold;
+        line-height: 1.6;
+        letter-spacing: 2px;
+        word-spacing: 6px;
+        text-align: right;
+
+        position: absolute;
+        top: 0;
+        right: 12px;
+
+        color: var(--white-1);
+        background: hsla(var(--hue), 25%, 10%, 0.5);
+      }
+
+      /* .img-bg */
+      .img-bg {
+        background: hsla(var(--hue), 25%, 10%, 0.5);
+      }
+
+      .card-front .img-bg {
+        clip-path: polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
+      }
+
+      .card-front .img-bg::before {
+        content: "";
+
+        position: absolute;
+        top: 34%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(18deg);
+
+        width: 100%;
+        height: 6px;
+        border: 1px solid var(--primary);
+        border-left-color: transparent;
+        border-right-color: transparent;
+
+        transition: 0.1s;
+      }
+
+      .card-back .img-bg {
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
+      }
+
+      /* hover state */
+      .flip-card-container:hover .card-front .img-bg::before {
+        width: 6px;
+        border-left-color: var(--primary);
+        border-right-color: var(--primary);
+      }
+
+      /* ul */
+      /* ul {
+        padding-top: 50%;
+        margin: 0 auto;
+        width: 70%;
+        height: 100%;
+
+        list-style: none;
+        color: var(--white-1);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      } */
+
+      /* li */
+      /* li {
+        width: 100%;
+        margin-top: 12px;
+        padding-bottom: 12px;
+
+        font-size: 18px;
+        text-align: center;
+
+        position: relative;
+      }  */
+
+      li:nth-child(2n) {
+        color: var(--white-2);
+      }
+
+      /* li:not(:last-child)::after {
+        content: "";
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+        height: 1px;
+
+        background: currentColor;
+        opacity: 0.2;
+      } */
+
+      /* button */
+      button {
+        font-family: inherit;
+        font-weight: bold;
+        color: var(--white-1);
+
+        letter-spacing: 2px;
+
+        padding: 9px 20px;
+        border: 1px solid var(--grey);
+        border-radius: 1000px;
+        background: transparent;
+        transition: 0.3s;
+
+        cursor: pointer;
+      }
+
+      button:hover,
+      button:focus {
+        color: var(--primary);
+        background: hsla(var(--hue), 25%, 10%, 0.2);
+        border-color: currentColor;
+      }
+
+      button:active {
+        transform: translate(2px);
+      }
+
+      /* .design-container */
+      .design-container {
+        --tr: 90;
+        --op: 0.5;
+
+        width: 100%;
+        height: 100%;
+
+        background: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        pointer-events: none;
+      }
+
+      /* .design */
+      .design {
+        display: block;
+
+        background: var(--grey);
+        position: absolute;
+
+        opacity: var(--op);
+        transition: 0.3s;
+      }
+
+      .design--1,
+      .design--2,
+      .design--3,
+      .design--4 {
+        width: 1px;
+        height: 100%;
+      }
+
+      .design--1,
+      .design--2 {
+        top: 0;
+        transform: translateY(calc((var(--tr) - (var(--tr) * 2)) * 1%));
+      }
+
+      .design--1 {
+        left: 20%;
+      }
+
+      .design--2 {
+        left: 80%;
+      }
+
+      .design--3,
+      .design--4 {
+        bottom: 0;
+        transform: translateY(calc((var(--tr) + (var(--tr) - var(--tr))) * 1%));
+      }
+
+      .design--3 {
+        left: 24%;
+      }
+
+      .design--4 {
+        left: 76%;
+      }
+
+      .design--5,
+      .design--6,
+      .design--7,
+      .design--8 {
+        width: 100%;
+        height: 1px;
+      }
+
+      .design--5,
+      .design--6 {
+        left: 0;
+        transform: translateX(calc((var(--tr) - (var(--tr) * 2)) * 1%));
+      }
+
+      .design--5 {
+        top: 41%;
+      }
+
+      .design--6 {
+        top: 59%;
+      }
+
+      .design--7,
+      .design--8 {
+        right: 0;
+        transform: translateX(calc((var(--tr) + (var(--tr) - var(--tr))) * 1%));
+      }
+
+      .design--7 {
+        top: 44%;
+      }
+
+      .design--8 {
+        top: 56%;
+      }
+
+      /* states */
+      button:hover + .design-container,
+      button:active + .design-container,
+      button:focus + .design-container {
+        --tr: 20;
+        --op: 0.7;
+      }
+
+      .abs-site-link {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        color: hsla(0, 0%, 100%, 0.6);
+        font-size: 16px;
+        font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+    </style>
+    
+    <style>
+      
+      .time {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        flex-direction: column;
+      }
+
+      .timeline {
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 5px 25px 5px rgba(0, 0, 0, 0.2);
+      }
+      .timeline .swiper-container {
+        height: 100vh;
+        width: 100%;
+        position: relative;
+      }
+      .timeline .swiper-wrapper {
+        transition: 2s cubic-bezier(0.68, -0.4, 0.27, 1.34) 0.2s;
+      }
+      .timeline .swiper-slide {
+        position: relative;
+        color: #fff;
+        overflow: hidden;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+      .timeline .swiper-slide::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        right: -115%;
+        bottom: -10%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        box-shadow: -230px 0 150px 60vw rgba(0, 0, 0, 0.7);
+        border-radius: 100%;
+      }
+      .timeline .swiper-slide-content {
+        position: absolute;
+        text-align: center;
+        width: 80%;
+        max-width: 310px;
+        right: 50%;
+        top: 13%;
+        transform: translate(50%, 0);
+        font-size: 12px;
+        z-index: 2;
+      }
+      .timeline .swiper-slide .timeline-year {
+        display: block;
+        font-size: 22px !important;
+        margin-bottom: 50px;
+        transform: translate3d(20px, 0, 0);
+        color: orange;
+        font-style: italic;
+        font-weight: 300;
+        opacity: 0;
+        transition: 0.2s ease 0.4s;
+      }
+      .timeline .swiper-slide .timeline-title {
+        font-weight: 800;
+        font-size: 44px !important;
+        margin: 0 0 30px;
+        opacity: 0;
+        transform: translate3d(20px, 0, 0);
+        transition: 0.2s ease 0.5s;
+      }
+      .timeline .swiper-slide .timeline-text {
+        line-height: 1.8;
+        opacity: 0;
+        transform: translate3d(20px, 0, 0);
+        transition: 0.2s ease 0.6s;
+        font-size: 20px;
+      }
+      .timeline .swiper-slide-active .timeline-year {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: 0.4s ease 1.6s;
+      }
+      .timeline .swiper-slide-active .timeline-title {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: 0.4s ease 1.7s;
+      }
+      .timeline .swiper-slide-active .timeline-text {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: 0.4s ease 1.8s;
+      }
+      .timeline .swiper-pagination {
+        right: 15% !important;
+        height: 100%;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        font-style: italic;
+        font-weight: 300;
+        font-size: 18px;
+        z-index: 1;
+      }
+      .timeline .swiper-pagination::before {
+        content: "";
+        position: absolute;
+        left: -30px;
+        top: 0;
+        height: 100%;
+        width: 1px;
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+      .timeline .swiper-pagination-bullet {
+        width: auto;
+        height: auto;
+        text-align: center;
+        opacity: 1;
+        background: transparent;
+        color: #d4a024;
+        margin: 15px 0 !important;
+        position: relative;
+      }
+      .timeline .swiper-pagination-bullet::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: -32.5px;
+        width: 6px;
+        height: 6px;
+        border-radius: 100%;
+        background-color: #d4a024;
+        transform: scale(0);
+        transition: 0.2s;
+      }
+      .timeline .swiper-pagination-bullet-active {
+        color: #d4a024;
+      }
+      .timeline .swiper-pagination-bullet-active::before {
+        transform: scale(1);
+      }
+      .timeline .swiper-button-next,
+      .timeline .swiper-button-prev {
+        background-size: 20px 20px;
+        top: 15%;
+        width: 20px;
+        height: 20px;
+        margin-top: 0;
+        z-index: 2;
+        transition: 0.2s;
+      }
+      .timeline .swiper-button-prev {
+        left: 8%;
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23d4a024'%2F%3E%3C%2Fsvg%3E");
+      }
+      .timeline .swiper-button-prev:hover {
+        transform: translateX(-3px);
+      }
+      .timeline .swiper-button-next {
+        right: 8%;
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23d4a024'%2F%3E%3C%2Fsvg%3E");
+      }
+      .timeline .swiper-button-next:hover {
+        transform: translateX(3px);
+      }
+      @media screen and (min-width: 768px) {
+        .timeline .swiper-slide::after {
+          right: -30%;
+          bottom: -8%;
+          width: 240px;
+          height: 50%;
+          box-shadow: -230px 0 150px 50vw rgba(0, 0, 0, 0.7);
+        }
+        .timeline .swiper-slide-content {
+          right: 30%;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 310px;
+          font-size: 11px;
+          text-align: right;
+        }
+        .timeline .swiper-slide .timeline-year {
+          margin-bottom: 0;
+          font-size: 32px;
+        }
+        .timeline .swiper-slide .timeline-title {
+          font-size: 46px;
+          margin: 0;
+        }
+        .timeline .swiper-pagination {
+          display: flex;
+        }
+        .timeline .swiper-button-prev {
+          top: 15%;
+          left: auto;
+          right: 15%;
+          transform: rotate(90deg) translate(0, 10px);
+        }
+        .timeline .swiper-button-prev:hover {
+          transform: rotate(90deg) translate(-3px, 10px);
+        }
+        .timeline .swiper-button-next {
+          top: auto;
+          bottom: 15%;
+          right: 15%;
+          transform: rotate(90deg) translate(0, 10px);
+        }
+        .timeline .swiper-button-next:hover {
+          transform: rotate(90deg) translate(3px, 10px);
+        }
+      }
+      @media screen and (min-width: 1024px) {
+        .timeline .swiper-slide::after {
+          right: -20%;
+          bottom: -12%;
+          width: 240px;
+          height: 50%;
+          box-shadow: -230px 0 150px 39vw rgba(0, 0, 0, 0.7);
+        }
+        .timeline .swiper-slide-content {
+          right: 25%;
+        }
+      }
+
+
+    </style>
+     <style>
+     
+
+      .team-cards-inner-container {
+        display: flex;
+        row-gap: 1.3rem;
+        column-gap: 1.3rem;
+      }
+
+      .text-blk {
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        padding-top: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        line-height: 25px;
+      }
+
+      .responsive-cell-block {
+        min-height: 75px;
+      }
+
+      .responsive-container-block {
+        min-height: 75px;
+        height: fit-content;
+        width: 100%;
+        padding-top: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+        justify-content: flex-start;
+      }
+
+      .inner-container {
+        max-width: 1200px;
+        min-height: 100vh;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        justify-content: center;
+      }
+
+      .section-head {
+        font-size: 60px;
+        line-height: 70px;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 24px;
+        margin-left: 0px;
+      }
+
+      .section-body {
+        font-size: 14px;
+        line-height: 18px;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 64px;
+        margin-left: 0px;
+      }
+
+      .team-cards-outer-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .content-container {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        align-items: center;
+        padding-top: 0px;
+        padding-right: 25px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+      }
+
+      .img-box {
+        max-width: 130px;
+        max-height: 130px;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        margin-top: 0px;
+        margin-right: 25px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+      }
+
+      .card {
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        padding-top: 16px;
+        padding-right: 16px;
+        padding-bottom: 16px;
+        padding-left: 16px;
+        box-shadow: rgba(95, 95, 95, 0.1) 6px 12px 24px;
+        flex-direction: row;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+      }
+
+      .cad-container {
+        max-width: 350px;
+      }
+
+      .card-content-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .person-name {
+        font-size: 20px;
+        font-weight: 700;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 5px;
+        margin-left: 0px;
+      }
+
+      .person-info {
+        font-size: 11px;
+        line-height: 15px;
+      }
+
+      .cad-container {
+        max-width: 350px;
+      }
+
+      .outer-container {
+        justify-content: center;
+        padding-top: 0px;
+        padding-right: 50px;
+        padding-bottom: 0px;
+        padding-left: 50px;
+        background-color: #faf8cd;
+      }
+
+      .person-img {
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0px);
+        }
+
+        40% {
+          transform: translateY(-30px);
+        }
+
+        60% {
+          transform: translateY(-15px);
+        }
+
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0px);
+        }
+
+        40% {
+          transform: translateY(-30px);
+        }
+
+        60% {
+          transform: translateY(-15px);
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .team-cad-container {
+          justify-content: center;
+        }
+
+        .section-head {
+          font-size: 50px;
+          line-height: 55px;
+        }
+
+        .img-box {
+          max-width: 109px;
+          max-height: 109px;
+        }
+
+        .content-container {
+          padding-top: 0px;
+          padding-right: 20px;
+          padding-bottom: 0px;
+          padding-left: 0px;
+        }
+
+        .inner-container {
+          justify-content: space-evenly;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .inner-container {
+          margin-top: 60px;
+          margin-right: 0px;
+          margin-bottom: 60px;
+          margin-left: 0px;
+        }
+
+        .section-body {
+          margin-top: 0px;
+          margin-right: 0px;
+          margin-bottom: 0px;
+          margin-left: 0px;
+        }
+
+        .img-box {
+          margin-top: 0px;
+          margin-right: 30px;
+          margin-bottom: 0px;
+          margin-left: 0px;
+        }
+
+        .content-box {
+          text-align: center;
+        }
+       
+
+        .content-container {
+          margin-top: 0px;
+          margin-right: 0px;
+          margin-bottom: 30px;
+          margin-left: 0px;
+        }
+
+        .cad-container {
+          max-width: 45%;
+        }
+
+        .team-cards-inner-container {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .outer-container {
+          padding-top: 0px;
+          padding-right: 60px;
+          padding-bottom: 0px;
+          padding-left: 60px;
+        }
+
+        .section-head {
+          font-size: 40px;
+          line-height: 45px;
+        }
+
+        .content-box {
+          padding-top: 0px;
+          padding-right: 0px;
+          padding-bottom: 0px;
+          padding-left: 0px;
+        }
+
+        .section-body {
+          font-size: 12px;
+        }
+
+        .img-box {
+          max-width: 68px;
+          max-height: 68px;
+        }
+
+        .person-name {
+          font-size: 14px;
+          margin-top: 0px;
+          margin-right: 0px;
+          margin-bottom: 1px;
+          margin-left: 0px;
+        }
+
+        .content-box {
+          margin-top: 0px;
+          margin-right: 0px;
+          margin-bottom: 46px;
+          margin-left: 0px;
+          text-align: left;
+        }
+
+        .content-container {
+          margin-top: 0px;
+          margin-right: 0px;
+          margin-bottom: 0px;
+          margin-left: 0px;
+        }
+
+        .cad-container {
+          max-width: 100%;
+        }
+      }
+
+      /* responsive */
+      @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&amp;display=swap");
+
+      *,
+      *:before,
+      *:after {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .wk-desk-1 {
+        width: 8.333333%;
+      }
+
+      .wk-desk-2 {
+        width: 16.666667%;
+      }
+
+      .wk-desk-3 {
+        width: 25%;
+      }
+
+      .wk-desk-4 {
+        width: 33.333333%;
+      }
+
+      .wk-desk-5 {
+        width: 41.666667%;
+      }
+
+      .wk-desk-6 {
+        width: 50%;
+      }
+
+      .wk-desk-7 {
+        width: 58.333333%;
+      }
+
+      .wk-desk-8 {
+        width: 66.666667%;
+      }
+
+      .wk-desk-9 {
+        width: 75%;
+      }
+
+      .wk-desk-10 {
+        width: 83.333333%;
+      }
+
+      .wk-desk-11 {
+        width: 91.666667%;
+      }
+
+      .wk-desk-12 {
+        width: 100%;
+      }
+
+      @media (max-width: 1024px) {
+        .wk-ipadp-1 {
+          width: 8.333333%;
+        }
+
+        .wk-ipadp-2 {
+          width: 16.666667%;
+        }
+
+        .wk-ipadp-3 {
+          width: 25%;
+        }
+
+        .wk-ipadp-4 {
+          width: 33.333333%;
+        }
+
+        .wk-ipadp-5 {
+          width: 41.666667%;
+        }
+
+        .wk-ipadp-6 {
+          width: 50%;
+        }
+
+        .wk-ipadp-7 {
+          width: 58.333333%;
+        }
+
+        .wk-ipadp-8 {
+          width: 66.666667%;
+        }
+
+        .wk-ipadp-9 {
+          width: 75%;
+        }
+
+        .wk-ipadp-10 {
+          width: 83.333333%;
+        }
+
+        .wk-ipadp-11 {
+          width: 91.666667%;
+        }
+
+        .wk-ipadp-12 {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .wk-tab-1 {
+          width: 8.333333%;
+        }
+
+        .wk-tab-2 {
+          width: 16.666667%;
+        }
+
+        .wk-tab-3 {
+          width: 25%;
+        }
+
+        .wk-tab-4 {
+          width: 33.333333%;
+        }
+
+        .wk-tab-5 {
+          width: 41.666667%;
+        }
+
+        .wk-tab-6 {
+          width: 50%;
+        }
+
+        .wk-tab-7 {
+          width: 58.333333%;
+        }
+
+        .wk-tab-8 {
+          width: 66.666667%;
+        }
+
+        .wk-tab-9 {
+          width: 75%;
+        }
+
+        .wk-tab-10 {
+          width: 83.333333%;
+        }
+
+        .wk-tab-11 {
+          width: 91.666667%;
+        }
+
+        .wk-tab-12 {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .wk-mobile-1 {
+          width: 8.333333%;
+        }
+
+        .wk-mobile-2 {
+          width: 16.666667%;
+        }
+
+        .wk-mobile-3 {
+          width: 25%;
+        }
+
+        .wk-mobile-4 {
+          width: 33.333333%;
+        }
+
+        .wk-mobile-5 {
+          width: 41.666667%;
+        }
+
+        .wk-mobile-6 {
+          width: 50%;
+        }
+
+        .wk-mobile-7 {
+          width: 58.333333%;
+        }
+
+        .wk-mobile-8 {
+          width: 66.666667%;
+        }
+
+        .wk-mobile-9 {
+          width: 75%;
+        }
+
+        .wk-mobile-10 {
+          width: 83.333333%;
+        }
+
+        .wk-mobile-11 {
+          width: 91.666667%;
+        }
+
+        .wk-mobile-12 {
+          width: 100%;
+        }
+      }
+    </style>
+    <style>
+      .heading {
+        position: relative;
+      }
+      .testimonials {
+        background: url("./img/time3.jpg") center center
+          no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 130px 0 150px;
+        color: #ffffff;
+        position: relative;
+      }
+      .testimonials:before {
+        content: "";
+        background: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        position: absolute;
+        left: 0;
+      }
+      .testimonials .heading h2 {
+        font-size: 50px;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .testimonials .heading h2 span {
+        color: #ff0000;
+      }
+
+      .testimonials p {
+        font-size: 19px;
+        font-weight: 400;
+        line-height: 1.7;
+        color: #d1e5e7;
+        margin: 20px 0;
+        padding: 0;
+      }
+
+      /* Image */
+      .testimonials .carousel-inner .carousel-item .team {
+        width: 200px;
+        height: 200px;
+        border: 2px solid #ff0000;
+        border-radius: 100%;
+        padding: 5px;
+        margin: 50px 0 15px;
+      }
+
+      .testimonials .carousel-inner .carousel-item h3 {
+        font-size: 30px;
+        color: #ffffff;
+        font-weight: 700;
+      }
+
+      .testimonials .carousel-inner .carousel-item h4 {
+        font-size: 20px;
+        font-weight: 400;
+        color: #e2e1e1;
+        margin-bottom: 20px;
+      }
+
+      .testimonials .carousel-indicators {
+        bottom: -30px;
+      }
+
+      .testimonials .carousel-indicators li {
+        background-color: #b8b7b7;
+        border-radius: 30px;
+        height: 4px;
+        width: 40px;
+      }
+
+      .testimonials .carousel-indicators .active {
+        background-color: #ff0000;
+      }
+
+      .testimonials .control span {
+        cursor: pointer;
+      }
+
+      .testimonials .icon {
+        height: 40px;
+        width: 40px;
+        background-size: 100%, 100%;
+        border-radius: 50%;
+        font-size: 40px;
+        background-image: none;
+        color: #ffffff;
+      }
+    </style>
+    <style>
+       .container-fluid{
+        max-width: 100%;
+        width:1650px;
+       }
+    
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-custom navbar-mainbg">
+        <a class="navbar-brand navbar-logo " href="./index.html"><img src="./img/favicon (3).ico" style="height: 100px;
+        width: 100px;" alt="">
+            <!-- NatureNurture Agro -->
+        </a>
+            <i class="fas fa-bars text-white navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></i>
+        <!-- <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white"></i>
+        </button> -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector">
+                    <div class="left"></div>
+                    <div class="right"></div>
+                </div>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./index.html">
+                        <!-- <i class="fa-solid fa-house"></i> -->
+                        Home</a>
+                </li>
+                <!-- <a href="./service.html" class="nav-item nav-link" id="services" style="display: none">Our
+                    Courses</a>
+                <a href="./clients.html" class="nav-item nav-link" id="clients" style="display: none">Affiliations</a>
+                <a href="./founders.html" class="nav-item nav-link" id="founders" style="display: none">Principal
+                    Message</a>
+                <a href="./payments.html" class="nav-item nav-link" id="payments" style="display: none">Payments</a> -->
+                <li class="nav-item">
+                    <a class="nav-link " href="./about.html">
+                        <!-- <i class="fa-solid fa-address-book"></i> -->
+                        About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./contact.html">
+                        <!-- <i class="fa-solid fa-address-card"></i> -->
+                        Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./timelinje.html">
+                        <!-- <i class="fa-solid fa-address-card"></i> -->
+                        Timeline</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./ourteam.html">
+                        <!-- <i class="fa-solid fa-address-card"></i> -->
+                        Our Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./corparateteam.html">
+                        <!-- <i class="fa-solid fa-address-card"></i> -->
+                       Corporate Team</a>
+                </li>
+                <!-- <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="more" data-bs-toggle="dropdown"
+                        style="display: none">More</a>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start m-0">
+                        <a href="./gallery.html" class="dropdown-item" id="gallery" style="display: none">Brochures
+                            and Images</a>
+                       
+                        <a href="./reviews.html" class="dropdown-item" id="reviews"
+                            style="display: none">Testimonials</a>
+                        <a href="./careers.html" class="dropdown-item" id="careers" style="display: none">Careers</a>
+                        <a href="./products.html" class="dropdown-item" id="products" style="display: none">Our
+                            Products</a>
+                      
+                    </div>
+                </div> -->
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="./login.html"><i class="fa-solid fa-right-to-bracket"></i>Login</a>
+                </li> -->
+                <!-- <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="adminActivites"
+                        style="display: none">Admin Activities</a>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start m-0">
+                        <a href="./content-edit.html" class="dropdown-item">Change Website Content <br />Services
+                            and Products</a>
+                        <a href="./leads.html" class="dropdown-item">Courses Applicants</a>
+                        <a href="./paymentLeads.html" class="dropdown-item">Payments Leads</a>
+                        <a href="./careerLeads.html" class="dropdown-item">Carrer Leads</a>
+                        <a href="./add-gallery.html" class="dropdown-item">Add Brochure and Images</a>
+                        <a href="./list-gallery.html" class="dropdown-item">List Brochure and Images</a>
+                        <a href="./uploadContact.html" class="dropdown-item">
+                            Upload Contact Info</a>
+                        <a href="uploadPayment.html" class="dropdown-item">
+                            Upload Payment Info</a>
+                        <a href="upload-logo.html" class="dropdown-item">Upload Logo</a>
+                        <a href="./uploadHomePageImg.html" class="dropdown-item">Upload Home Page Image</a>
+                        <a href="./selectLogo.html" class="dropdown-item">Select Logo</a>
+                        <a href="./selectHomePageImg.html" class="dropdown-item">Select Home Page Image</a>
+                        <a href="./ManageNotifications.html" class="dropdown-item">Manage Notifications</a>
+                        <a href="./uploadReview.html" class="dropdown-item">Manage Testimonials</a>
+                        <a href="./uploadCareers.html" class="dropdown-item">Manage Careers</a>
+                        <a href="uploadClient.html" class="dropdown-item">Manage Affiliations</a>
+                        <a href="./uploadFounder.html" class="dropdown-item">Manage Principal Message</a>
+                        <button id="logout" style="color: red" class="nav-link custom-brand" data-bs-toggle="modal"
+                            data-bs-target="#logoutConfirmationModal">
+                            Logout
+                        </button>
+                      
+                    </div>
+                </div> -->
+            </ul>
+        </div>
+    </nav>
+
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+        </ol>
+
+        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="carousel-inner  mt-1">
+                <div class="carousel-item mobile-styling active" style="height: 100%; overflow: hidden;">
+                    <div class="d-flex align-items-center justify-content-center" style="height: 100%;">
+                        <img class="w-100 rounded" src="./img/shipping3 (1).jpg" alt="Image" id="homePageImage"
+                            style="max-width: 100%;height: 650px; object-fit: cover;">
+                    </div>
+                    <div class="carousel-caption flex-column justify-content-end">
+                        <div class="p-5 text-end" style="max-width: 100%; ">
+                            <h5 class="display-1 text-white mb-md-4 animated zoomIn text-center" id="webAppName1">
+                                Hamad International Shipping <br>
+                                Cochin
+                                <!-- Discover the Serenity -->
+                            </h5>
+                            <p class="text-white mb-md-4 animated zoomIn text-center">An Delta Shipping Agency Qatar Enterprise</p>
+                            <!-- <h5 class="text-white mb-md-4 animated zoomIn text-center" id="homePageWelcome">
+                               
+                                Welcome to a world where nature unfolds its serene embrace. The lush landscapes, bathed
+                                in the gentle glow of sunlight,
+                                invite you to witness the harmonious dance of vibrant flowers and leaves.The air
+                                resonates with a symphony of birdsong,
+                                creating a tranquil melody that speaks to the tranquility of the surroundings.
+                            </h5> -->
+                            <div class="d-flex justify-content-start">
+                                <a id="whatsappButton2"
+                                    class="btn btn-success py-md-3 px-md-5 animated slideInLeft mr-2">WhatsApp</a>
+                                <a href="contact.html"
+                                    class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight ">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="carousel-item">
+                    <img class="w-100 rounded" src="img/shipingimg.jpg" alt="Image" id="homePageImage2"
+                        style="height: 650px;" />
+                    <div class="carousel-caption  flex-column  justify-content-end">
+                        <div class="p-5" style="max-width: 100%;">
+                            <h5 class="display-1 text-white mb-md-4 animated zoomIn text-center" id="webAppName2">
+                                <!-- The Artistry of Nature -->
+                                Hamad International Shipping <br>
+                                Cochin
+                            </h5>
+                            <p class="text-white mb-md-4 animated zoomIn text-center">An Delta Shipping Agency Qatar Enterprise</p>
+                            <h5 class="text-white  mb-3 animated slideInDown text-left" id="homePageCaption">
+                                <!-- Nature is a canvas painted with hues of endless wonder. Majestic mountains stand tall,
+                                their peaks reaching for the sky,
+                                while rivers carve graceful paths through valleys, whispering tales of time immemorial.
+                                As the sun sets, casting its warm glow across the horizon, the landscape transforms into
+                                a kaleidoscope of colors. -->
+                            </h5>
+                            <div class="d-flex justify-content-start">
+                                <a id="whatsappButton2"
+                                    class="btn btn-success bg- py-md-3 px-md-5 animated slideInLeft mr-2">WhatsApp</a>
+                                <a href="contact.html"
+                                    class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
+        </div>
+    </div>
+    </main>
+
+     <!-- Introduction Start -->
+
+     <div class="container-fluid mt-5 wow fadeInUp" data-wow-delay="0.1s" id="aboutUsContainer">
+        <div class="py-5 ">
+            <div class="row  ">
+                <div class="col-lg-5" style="min-height: 300px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s"
+                            src="./img/intro-1.jpeg"
+                            id="aboutUsImage" style="object-fit: cover;box-shadow: 0px 0px 10px 1px #d78181;" />
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="section-title position-relative pb-3 mb-4 ">
+                        <h1 class="fw-bold  text-dark text-uppercase ">AGENDA</h1>
+                    </div>
+                    <h4 class="text-dark">
+                        <i class="fa-solid fa-arrow-right"></i>Corporate Governance <br>
+                        <i class="fa-solid fa-arrow-right"></i>Timeline<br>
+                        <i class="fa-solid fa-arrow-right"></i>PrimaryGoals<br>  
+                        <i class="fa-solid fa-arrow-right"></i>Area Of Focus<br>
+                        <i class="fa-solid fa-arrow-right"></i>Teams Representations<br>
+                        <i class="fa-solid fa-arrow-right"></i>What we can Deliver
+                       </h4>
+                    <div class="row g-0 mb-3" id="aboutUsPoints">
+                    </div>
+                    <!-- <a href="contact.html" class="btn py-3 px-5 mt-4 wow zoomIn text-white" data-wow-delay="0.9s"
+                        style="background-color:#51acfb;">Contact Us</a><br> <br> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Introduction End -->
+
+    <!-- About Us Start -->
+    <div class="container-fluid  wow fadeInUp" data-wow-delay="0.1s" id="aboutUsContainer">
+        <div class="py-5 ">
+            <div class="row  ">
+                <div class="col-lg-7">
+                    <div class="section-title position-relative pb-3 mb-3 ">
+                        <h1 class="fw-bold  text-dark text-uppercase ">About Us</h1>
+                        <!-- <h1 class="mb-0 " id="aboutUsHeader" style="color: #51acfb;">NatureNurture Agro
+                        </h1> -->
+                    </div>
+                    <h5 class="h4-with-space">At Hamad International Shipping (HIS) Company Cochin is part of Delta
+                        Shipping agency enterprise Qatar , we empower organizations personnel
+                        to foster collaborative thinking to further drive the workplace innovation
+                        to deliver desired customer centric logistic solutions benefiting the
+                        shipping & logistics industry at large and the inhouse customer in
+                        particular by in depth analysis of customers requirements well within his
+                        financial constraints bridging his immediate requirements to his full
+                        satisfaction where by ensuring customer satisfaction verbatim, we always
+                        foster business climate on a consumer-first mindset cementing a long
+                        lasting professional relationship, we are a cut above from others in this
+                        logistic race …</h5>
+
+                   
+                    <p class="mb-4 text-white" id="aboutUsCaption">Harmony in Agriculture, NatureNurture Agro.</p>
+                    <div class="row g-0 mb-3" id="aboutUsPoints">
+                        <!-- Points will be dynamically added here -->
+                    </div>
+                    <!-- <a href="contact.html" class="btn py-3 px-5 mt-4 wow zoomIn text-white" data-wow-delay="0.9s"
+                        style="background-color:#51acfb;">Contact Us</a><br> <br> -->
+                </div>
+                <div class="col-lg-5" style="min-height: 530px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s"
+                            src="./img/about-ship-2.jpeg"
+                            id="aboutUsImage" style="object-fit: cover;box-shadow: 0px 0px 10px 1px #d78181;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+<!-- Corporate Section Start -->
+    <div class="Corporate-content mt-5"><br>
+        <h1 class="text-center">Corporate Governance</h1>
+        <p>
+            As Hamad International shipping cochin is a part of Delta Shipping Agency
+            enterprise Qatar , who are a leading shipping agency based out of Qatar
+            endorsed with the opportunity to be one among the selected few to be
+            registered under MWANI Qatar , while officially under the patronage of
+            Sheikh Muhammad Bin Nasser Fahad Jassim Al Thani of Qatar royal kingdom.
+        </p>
+        <p>
+            Delta Shipping agency Qatar was established in the year 2019 , professionally
+            managed by personnel who have core shipping and logistics international
+            exposure ,at the short span of professional existence it is a preferred partner
+            in all matters of logistics facilitations at Qatar handling almost 45+ steamer
+            agencies
+        </p>
+    </div>
+<!-- Corporate Section End -->
+
+     <!-- Area Section Start -->
+     <div class="container-fluid mt-5 wow fadeInUp" data-wow-delay="0.1s" id="aboutUsContainer">
+        <div class="py-5 ">
+            <div class="row  ">
+                <div class="col-lg-5" style="min-height: 450px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s"
+                            src="./img/area-1.jpeg"
+                            id="aboutUsImage" style="object-fit: cover;box-shadow: 0px 0px 10px 1px #d78181;" />
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="section-title position-relative pb-3 mb-4 ">
+                        <h1 class="fw-bold  text-dark">Areas of focus</h1>
+                    </div>
+                    <h5 class="text-dark">
+                        Market scenarios
+                        <ul>
+                            <li >
+                                Develop winning strategies to keep ahead of
+                                the competition in Shipping agency business
+                            </li>
+                            <li>
+                                Innovate business opportunities for
+                            </li>
+                            <li>
+                                Freight forwarding / LCL consolidation,
+                            </li>
+                            <li>
+                                Coastal & transshipment Shipment
+                                operations Vessel Husbanding /Container
+                                yard & Repairs ops Bunkering Services and
+                                other verticals
+                            </li>
+                            <li>
+                                Visualize customer directed convergence
+                            </li>
+                            <li>
+                                Iterative approaches to corporate strategy
+                            </li>
+                            <li>
+                                Establish inhouse SOP’s
+                            </li>
+                        </ul>
+                    </h5>
+                    <!-- <div class="row g-0 mb-3" id="aboutUsPoints">  </div> -->
+                    <!-- <a href="contact.html" class="btn py-3 px-5 mt-4 wow zoomIn text-white" data-wow-delay="0.9s"
+                        style="background-color:#51acfb;">Contact Us</a><br> <br> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Area Section End -->
+
+    <!-- International Shipping  Start-->
+   <div class="shipping-container mt-5">
+    <div class="shipping-contect"><br>
+    <h1 class="text-center mt-4"> Why Hamad International Shipping</h1><br>
+    <p class="">
+        Despite the latest technologies and online services, there are a lot of things that can go wrong while shipping good & products, At Times Global Shipping, we
+        bring you decades of experience with a comprehensive solution to help navigate the complexity of international and domestic <span> We cut complexity not
+        conversations. Because </span> shipping is a complex process and stressful to monitor constantly, our customer support gives you a hand-on support throughout
+        your shipping process of freight forwarding or NVOCC , <span>Best rates with no compromise. We </span>don’t cut corners to save costs that can compromise the
+        safety of your shipment. Instead rely on our strong relationships with carriers to negotiate the best rates .we insist on effective communication& collaborations
+        so that we have <span id="spa"> Zero complication, and best compliance </span>
+    </p><br>
+    <p>
+        We intend to provide our Principals with access to cargo sources with maximum yield through our network. We guarantee our Principals prompt
+        remittance of freight due, first class vendors with lowest possible cost and agency services that exceed the local customers` expectations Hamad
+        International Shipping relies on strong and broad human values that fuel the dedication and passion of each staff member. Excellence, exemplarity,
+        imagination, and boldness are some of our core values we embrace to turn the brightest minds in logistics into the best and most effective customer service
+        crew worldwide. We offer our staff personal development opportunities, rewarding and challenging career opportunities.</p><br>
+        <p>Hamad International Shipping relies on strong and broad human values that fuel the dedication and passion of each staff member. Excellence, exemplarity,
+        imagination, and boldness are some of our core values we embrace to turn the brightest minds in logistics into the best and most effective customer service
+        crew worldwide. We offer our staff personal development opportunities, rewarding and challenging career opportunities</p>
+   </div>
+</div>
+<br>
+ <!-- International Shipping  End-->
+
+ <!-- Primary Goals Start -->
+
+ <div class="primary-container"><br/><br>
+    <h1>PrimaryGoals</h1>
+    <h4>Represent Professionally managed and commercially aggressive Liner/ NVOCC
+        agency at cochin
+    </h4><br>
+    <h4>Innovate out of box logistic solutions to customer which will be of commercial
+        significance
+    </h4><br>
+    <h4>Maintain Transparency in operations and cementTrust factor with customer with
+        focused team work
+    </h4>
+ </div>
+
+ <!-- Primary Goals End -->
+ <!-- timeline start -->
+  <h1 class="text-center mt-3" style="font-weight: bold;">Timeline</h1>
+  <section class="">
+      <div class="time">
+      <div class="timeline">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div
+              class="swiper-slide"
+              style="background-image: url(./img/time1.jpg)"
+              data-year="NOV 2023"
+            >
+              <div class="swiper-slide-content">
+                <span class="timeline-year">2023</span>
+                <h4 class="timeline-title" style="color: #fff;">NOVEMBER 1st</h4>
+                <p class="timeline-text">
+                  First Indian Branch of Hamad International Shipping opens at
+                  cochin with great expectations
+                </p>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="background-image: url(./img/time2.jpg)"
+              data-year="DEC 2023"
+            >
+              <div class="swiper-slide-content">
+                <span class="timeline-year">2023</span>
+                <h4 class="timeline-title" style="color: #fff;">DECEMBER</h4>
+                <p class="timeline-text">
+                  Despite the latest technologies and online services, there are
+                  a lot of things that can go wrong while shipping good &
+                  products.
+                </p>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="background-image: url(./img/time3.jpg)"
+              data-year="JAN 2024"
+            >
+              <div class="swiper-slide-content">
+                <span class="timeline-year">2024</span>
+                <h4 class="timeline-title" style="color: #fff;">JANUARY</h4>
+                <p class="timeline-text">
+                  Steamer Agency statutory compliances with Cochin Customs& DP
+                  world completed
+                </p>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="background-image: url(./img/time4.jpg)"
+              data-year="FEB 2024"
+            >
+              <div class="swiper-slide-content">
+                <span class="timeline-year">2024</span>
+                <h4 class="timeline-title" style="color: #fff;">FEBRUARY</h4>
+                <p class="timeline-text">
+                  Deploy strategic networks with compelling Shipping agency
+                  business needs and establishing new agency business
+                </p>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="background-image: url(./img/time5.jpg)"
+              data-year="MAR 2024"
+            >
+              <div class="swiper-slide-content">
+                <span class="timeline-year">2024</span>
+                <h4 class="timeline-title" style="color: #fff;">MARCH</h4>
+                <p class="timeline-text">
+                  Disseminate standardized metrics for commercial growth
+                </p>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="background-image: url(./img/time6.jpg)"
+              data-year="APR 2024"
+            >
+              <div class="swiper-slide-content">
+                <span class="timeline-year">2024</span>
+                <h4 class="timeline-title" style="color: #fff;">APRIL</h4>
+                <p class="timeline-text">
+                  Foster holistically superior cutting edge methodologies for
+                  business progression
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+    </section>
+    <br>
+
+ <!-- timeline end -->
+ <!-- cards secrtion start -->
+     <!-- flip-card-container -->
+     
+  <h1 class="text-center mt-3" style="font-weight: bold;">How We Get There</h1>
+    <section class="flip">
+      <div class="flip-card-container" style="--hue: 220">
+        <div class="flip-card">
+          <div class="card-front">
+            <figure>
+              <div class="img-bg"></div>
+              <img src="img/image7.jpg " alt="Brohm Lake" />
+              <figcaption>ROI</figcaption>
+            </figure>
+
+            <ul>
+              <li  style="
+                  width: 100%;
+                  margin-top: 12px;
+                  padding-bottom: 12px;
+                  color: var(--white-1);
+
+                  font-size: 18px;
+                  text-align: center;
+
+                  position: relative;
+                ">
+                Envision professional &commercially structured principals with
+                expertise and cross-industry growth strategies
+              </li>
+              <li  style="
+                  width: 100%;
+                  margin-top: 12px;
+                  padding-bottom: 12px;
+                  color: var(--white-1);
+
+                  font-size: 18px;
+                  text-align: center;
+
+                  position: relative;
+                ">
+                Visualize quality intellectual man power capital deployment
+              </li>
+              <li  style="
+                  width: 100%;
+                  margin-top: 12px;
+                  padding-bottom: 12px;
+                  color: var(--white-1);
+
+                  font-size: 18px;
+                  text-align: center;
+
+                  position: relative;
+                ">
+                Engage worldwide methodologies with web-enabled technologies
+              </li>
+            </ul>
+          </div>
+
+          <div class="card-back">
+            <figure>
+              <div class="img-bg"></div>
+              <img src="img/time2.jpg"alt="Brohm Lake" />
+            </figure>
+
+            <div class="design-container">
+              <span class="design design--1"></span>
+              <span class="design design--2"></span>
+              <span class="design design--3"></span>
+              <span class="design design--4"></span>
+              <span class="design design--5"></span>
+              <span class="design design--6"></span>
+              <span class="design design--7"></span>
+              <span class="design design--8"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /flip-card-container -->
+
+      <!-- flip-card-container -->
+      <div class="flip-card-container" style="--hue: 170">
+        <div class="flip-card">
+          <div class="card-front">
+            <figure>
+              <div class="img-bg"></div>
+              <img src="img/image4 (2).jpg  " alt="Image 2" />
+              <figcaption>Niche markets</figcaption>
+            </figure>
+
+            <ul>
+              <li  style="
+                  width: 100%;
+                  margin-top: 12px;
+                  padding-bottom: 12px;
+                  color: var(--white-1);
+
+                  font-size: 18px;
+                  text-align: center;
+
+                  position: relative;
+                ">
+                Pursue scalable customer service through sustainable strategies
+              </li>
+              <li  style="
+                  width: 100%;
+                  margin-top: 12px;
+                  padding-bottom: 12px;
+                  color: var(--white-1);
+
+                  font-size: 18px;
+                  text-align: center;
+
+                  position: relative;
+                ">
+                Engage top-line web services with cutting-edge deliverables to
+                re position ourself
+              </li>
+              <li  style="
+                  width: 100%;
+                  margin-top: 12px;
+                  padding-bottom: 12px;
+                  color: var(--white-1);
+
+                  font-size: 18px;
+                  text-align: center;
+
+                  position: relative;
+                ">Tap opportunistic business</li>
+            </ul>
+          </div>
+
+          <div class="card-back">
+            <figure>
+              <div class="img-bg"></div>
+              <img src="img/image3 (2).jpg" alt="image-2" />
+            </figure>
+
+            <div class="design-container">
+              <span class="design design--1"></span>
+              <span class="design design--2"></span>
+              <span class="design design--3"></span>
+              <span class="design design--4"></span>
+              <span class="design design--5"></span>
+              <span class="design design--6"></span>
+              <span class="design design--7"></span>
+              <span class="design design--8"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /flip-card-container -->
+
+      <!-- flip-card-container -->
+      <div class="flip-card-container" style="--hue: 350">
+        <div class="flip-card">
+          <div class="card-front">
+            <figure>
+              <div class="img-bg"></div>
+              <img src="img/image8.jpg" alt="Brohm Lake" />
+              <figcaption>Supply chains</figcaption>
+            </figure>
+
+            <ul>
+              <li  style="
+                  width: 100%;
+                  margin-top: 12px;
+                  padding-bottom: 12px;
+                  color: var(--white-1);
+
+                  font-size: 18px;
+                  text-align: center;
+
+                  position: relative;
+                ">Cultivate one-to-one customer service with robust ideas</li>
+              <li  style="
+                  width: 100%;
+                  margin-top: 12px;
+                  padding-bottom: 12px;
+                  color: var(--white-1);
+
+                  font-size: 18px;
+                  text-align: center;
+
+                  position: relative;
+                ">
+                Maximize timely deliverables for real-time shipment projects
+              </li>
+              <li style="
+                  width: 100%;
+                  margin-top: 12px;
+                  padding-bottom: 12px;
+                  color: var(--white-1);
+
+                  font-size: 18px;
+                  text-align: center;
+
+                  position: relative;
+                ">Maintain and develop strong agency& fraternity network</li>
+            </ul>
+          </div>
+
+          <div class="card-back">
+            <!-- only if the image is necessary -->
+            <figure>
+              <div class="img-bg"></div>
+              <img src="img/image5.jpg" alt="Brohm Lake" />
+            </figure>
+
+            <!-- can add svg here and remove these eight spans -->
+            <div class="design-container">
+              <span class="design design--1"></span>
+              <span class="design design--2"></span>
+              <span class="design design--3"></span>
+              <span class="design design--4"></span>
+              <span class="design design--5"></span>
+              <span class="design design--6"></span>
+              <span class="design design--7"></span>
+              <span class="design design--8"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /flip-card-container -->
+
+    <a
+      href="https://abubakersaeed.netlify.app/designs/d4-flip-card"
+      class="abs-site-link"
+      rel="nofollow noreferrer"
+      target="_blank"
+      ></a
+    >
+ <!-- cards secrtion end -->
+
+
+
+    <!-- logout -->
+    <div class="modal fade" id="logoutConfirmationModal" tabindex="-1" aria-labelledby="logoutConfirmationModalLabel"
+        data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoutConfirmationModalLabel">
+                        Confirm Logout
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">Are you sure you want to logout?</div>
+                <div class="modal-footer">
+                    <!-- Cancel button to close the modal -->
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cancel
+                    </button>
+                    <!-- Logout button to trigger the logout -->
+                    <button type="button" class="btn btn-primary" id="confirmLogoutBtn">
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  
+
+    <!-- Quote Start -->
+    <div id="serviceContainer2" class="container-fluid wow fadeInUp mt-5" style="margin-bottom: 6rem;"  data-wow-delay="0.1s">
+        <div class="">
+                <div class="row justify-content-between">
+                    <div class="col-lg-6 d-flex flex-column pr-5 ">
+                        <div class="section-title position-relative mb-5">
+                            <h1 class="fw-bold text-dark text-uppercase mb-4">
+                                Enquiry for Shipping
+                            </h1>
+                            <h4 class="mb-0" style="color: #51acfb">
+                                Please Feel Free to Contact Us
+                            </h4>
+                        </div>
+                        <div class="row gx-3">
+                            <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
+                                <h5 class="mb-4">
+                                    <i class="fa fa-reply me-3" style="color:#51acfb"></i>Reply within 24 hours
+                                </h5>
+                            </div>
+                            <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
+                                <h5 class="mb-4">
+                                    <i class="fa fa-phone-alt me-3" style="color:#51acfb"></i>24 hrs telephone support
+                                </h5>
+                            </div>
+                        </div>
+                        <p class="mb-4">
+                            Eirmod sed tempor lorem ut dolores. Aliquyam sit sadipscing kasd ipsum. Dolor ea et dolore et at
+                            sea ea at dolor, justo ipsum duo rebum sea invidunt voluptua. Eos vero eos vero ea et dolore
+                            eirmod et. Dolores diam duo invidunt lorem. Elitr ut dolores magna sit. Sea dolore sanctus sed
+                            et. Takimata takimata sanctus sed.
+                        </p>
+                        <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.6s">
+                            <div class="d-flex align-items-center justify-content-center rounded-circle"
+                                style="width: 60px; height: 60px; background-color:#51acfb">
+                                <i class="fa fa-phone-alt text-white ml-2"></i>
+                            </div>
+                            <div class="ps-4 phone-section">
+                                <h5 class="mb-2">Call to ask any question</h5>
+                                <h4 class="text-primary mb-0 contact-data"></h4>
+                                <h4 class="text-primary mb-0 contact-data2"></h4>
+                            </div>
+                        </div>
+                    </div><br>
+                    <br>
+    
+                    <div class="col-lg-5">
+                        <div class="wrap p-3">
+                            <!-- <h2 class="heading-section text-center mt-5">Contact Us</h2> -->
+                            <div class="content-wrap p-lg-5">
+                                <form action="#">
+                                    <div class="form-group mt-3">
+                                        <input type="text" class="form-control" required>
+                                        <label class="form-control-placeholder" for="name">Name</label>
+                                    </div>
+    
+                                    <div class="form-group mt-3">
+                                        <input type="tel" class="form-control" required>
+                                        <label class="form-control-placeholder" for="mobileNumber">Mobile Number</label>
+                                    </div>
+                                    <div class="form-group mt-3">
+                                        <input type="email" class="form-control" required>
+                                        <label class="form-control-placeholder" for="email">Email</label>
+                                    </div>
+    
+                                    <div class="form-group mt-3">
+                                        <select class="form-control bg-white text-muted" required>
+                                            <option value="" disabled selected>Select a Subject</option>
+                                            <option value="option1">Option 1</option>
+                                            <option value="option2">Option 2</option>
+                                        </select>
+                                        <!-- <label class="form-control-placeholder" for="subject">Subject</label> -->
+                                    </div>
+    
+                                    <div class="form-group mt-3">
+                                        <textarea class="form-control" rows="4" required></textarea>
+                                        <label class="form-control-placeholder" for="message">Message</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="form-control btn btn-primary rounded submit px-3">
+                                            Request An Enquiry
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <!-- Quote End -->
+      
+
+    <!-- Testimonial Start -->
+     <section class="testimonials">
+      <div class="heading text-center">
+        <h2>
+          CORE
+          <span> CORPORATE</span>
+          TEAM
+        </h2>
+      </div>
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-12">
+            <div
+              id="carouselExampleIndicators"
+              class="carousel slide"
+              data-ride="carousel"
+            >
+              <!-- Indicators-->
+              <ol class="carousel-indicators">
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="0"
+                  class="active"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="1"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="2"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="3"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="4"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="5"
+                ></li>
+
+              </ol>
+
+              <div class="carousel-inner">
+                <!-- Item-1 -->
+                <div class="carousel-item active text-center">
+                  <img
+                    src="./img/person6 (1).png"
+                    alt=""
+                    class="center-block team"
+                  />
+                  <h3>Mr. AMEERUDEEN</h3>
+                  <h4>KADAVATHAPURA PURA</h4>
+                  <h4> PARTNER</h4>
+                  <p>An Delta Shipping Agency Qatar Enterprise</p>
+                </div>
+                <!-- Item-2 -->
+                <div class="carousel-item text-center">
+                  <img
+                    src="./img/person1 (1) (1).png"
+                    alt=""
+                    class="center-block team"
+                  />
+                  <h3>Mr. MULLASSERI SUBAIR</h3>
+                  <h4>SHANAVAS</h4>
+                  <h4> PARTNER</h4>
+                  <p>An Delta Shipping Agency Qatar Enterprise</p>
+                </div>
+                <!-- Item-3 -->
+                <div class="carousel-item text-center">
+                  <img
+                    src="img/person2 (1) (1).png"
+                    alt=""
+                    class="center-block team"
+                  />
+                  <h3>Mr. ANAND AMBIKADEVI</h3>
+                  <h4> PARTNER</h4>
+                  <p>An Delta Shipping Agency Qatar Enterprise</p>
+                </div>
+              </div>
+              <!-- Item-4 -->
+                <div class="carousel-item text-center">
+                  <img
+                    src="img/person3 (1) (1).png"
+                    alt=""
+                    class="center-block team"
+                  />
+                  <h3>Mr. ANIL NARAYANAN</h3>
+                  <h4>HR HEAD</h4>
+                  <p>An Delta Shipping Agency Qatar Enterprise</p>
+                </div>
+              </div>
+              <!-- Item-5 -->
+                <div class="carousel-item text-center">
+                  <img
+                    src="img/person4 (1).png"
+                    alt=""
+                    class="center-block team"
+                  />
+                  <h3>Mr. SHYAM KUMAR</h3>
+                  <h4>FINANCE MANAGER</h4>
+                  <p>An Delta Shipping Agency Qatar Enterprise</p>
+                </div>
+              </div>
+              <!-- Item-6 -->
+                <div class="carousel-item text-center">
+                  <img
+                    src="img/person5 (1).png"
+                    alt=""
+                    class="center-block team"
+                  />
+                  <h3>Mr. MADHAVAN UNNI</h3>
+                  <h4>SR. MANAGER - OPERATIONS</h4>
+                  <p>An Delta Shipping Agency Qatar Enterprise</p>
+                </div>
+              </div>
+              <a
+                class="carousel-control-prev control"
+                data-target="#carouselExampleIndicators"
+                role="button"
+                data-slide="prev"
+              >
+                <span class="fa fa-angle-left icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a
+                class="carousel-control-next control"
+                data-target="#carouselExampleIndicators"
+                role="button"
+                data-slide="next"
+              >
+                <span class="fa fa-angle-right icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br>
+    <!-- <TESTIMOIALENDS -->
+
+
+    <!-- Team Start -->
+    <section class="team">
+    <div class="responsive-container-block outer-container">
+      <div class="responsive-container-block inner-container">
+        <div
+          class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-4 wk-ipadp-5 content-container"
+        >
+          <div class="content-box" style="font-family: 'poppins', sans-serif">
+            <h6 class="text-blk section-head" style="font-size: 35px">
+              MEET OUR TEAM AT COCHIN
+            </h6>
+             <h5 class="h4-with-space"> Hamad International Shipping  relies on strong and broad human values that fuel the dedication and passion of each staff member. Excellence, exemplarity, imagination, and boldness are some of our core values we embrace to turn the brightest minds in logistics into the best and most effective customer service crew worldwide.</h5>
+          </div>
+        </div>
+        <div
+          class="responsive-cell-block wk-ipadp-6 wk-tab-12 wk-mobile-12 wk-desk-8 team-cards-outer-container"
+        >
+          <div class="responsive-container-block team-cards-inner-container">
+            <div
+              class="responsive-cell-block wk-mobile-12 wk-ipadp-10 wk-tab-8 wk-desk-6 cad-container"
+            >
+              <div class="card">
+                <div class="img-box">
+                  <img class="person-img" src="./img/team1.png" />
+                </div>
+                <div class="card-content-box">
+                  <p class="text-blk person-name">Mr. P.R RAJESH</p>
+                  <p class="text-blk person-info">GENERAL MANAGER</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="responsive-cell-block wk-mobile-12 wk-ipadp-10 wk-tab-8 wk-desk-6 cad-container"
+            >
+              <div class="card">
+                <div class="img-box">
+                  <img class="person-img" src="./img/team2.png" />
+                </div>
+                <div class="card-content-box">
+                  <p class="text-blk person-name">Mr. DEEPU JOHN</p>
+                  <p class="text-blk person-info">BRANCH MANAGER</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="responsive-cell-block wk-mobile-12 wk-ipadp-10 wk-tab-8 wk-desk-6 cad-container"
+            >
+              <div class="card">
+                <div class="img-box">
+                  <img class="person-img" src="./img/team3.png" />
+                </div>
+                <div class="card-content-box">
+                  <p class="text-blk person-name">Ms. CHITRA RAMASWAMY</p>
+                  <p class="text-blk person-info">MANAGER DOC & CS</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="responsive-cell-block wk-mobile-12 wk-ipadp-10 wk-tab-8 wk-desk-6 cad-container"
+            >
+              <div class="card">
+                <div class="img-box">
+                  <img class="person-img" src="./img/team4.png" />
+                </div>
+                <div class="card-content-box">
+                  <p class="text-blk person-name">Ms. NIMISHA UTHAMAN</p>
+                  <p class="text-blk person-info">SR. CS & DOCS</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="responsive-cell-block wk-mobile-12 wk-ipadp-10 wk-tab-8 wk-desk-6 cad-container"
+            >
+              <div class="card">
+                <div class="img-box">
+                  <img class="person-img" src="./img/team5.png" />
+                </div>
+                <div class="card-content-box">
+                  <p class="text-blk person-name">Ms. SHEEJA.P</p>
+                  <p class="text-blk person-info">ADMINISTRATOR</p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="responsive-cell-block wk-mobile-12 wk-ipadp-10 wk-tab-8 wk-desk-6 cad-container"
+            >
+              <div class="card">
+                <div class="img-box">
+                  <img class="person-img" src="./img/team6.png" />
+                </div>
+                <div class="card-content-box">
+                  <p class="text-blk person-name">Ms. GOKULA..A.G</p>
+                  <p class="text-blk person-info">ACCOUNTANT</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    <!-- Team End -->
+
+    <!-- Vendor Start -->
+    <!-- <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" id="vendorSection">
+        <div class="container py-5 mb-5">
+            <div class="bg-white">
+                <div class="owl-carousel vendor-carousel" id="vendor-carousel"> -->
+                    <!-- Vendor logos and names will be dynamically added here -->
+                <!-- </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Vendor End -->
+    <div class="deliver-container">
+        <div  class="deliver-content">
+        <h1 class="text-center text-info">What we Would Deliver</h1>
+        <p >At Hamad International Shipping Cochin , we are a fusion of experienced logistics
+          professionals with Core exposure in all facets of shipping with firm good
+          professional networking within industry coupled with onboarding of young talent ,
+          we believe in giving 100% tailor made solutions to our customers suiting their
+          business module</p><br>
+          <p >
+          We look forward to thrive benchmarked on our market knowledge ,<span>Trust</span> which
+          we have being able to instill amidst our customers and the level of <span>Transparency</span>
+          in our dealing with a great professionally competent team behind us to guide us
+          through thick and thin ,as we passionately feel "<span>Efficiencies will come from
+            proactively transforming how we do business. In a structured manner</span> “ </p>
+          </div>   
+      </div>
+   
+    <!-- Footer Start -->
+    <div
+      class="jumbotron-fluid text-light mt-2 wow fadeInUp"
+      data-wow-delay="0.1s"
+      style="background: linear-gradient(180deg, rgb(44, 43, 43), black)"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <div
+              id="footer-header"
+              class="d-flex flex-column align-items-center justify-content-center text-center h-100 p-4"
+            >
+              <a href="index.html" class="navbar-brand">
+                <h6 class="m-0 text-success" id="webAppName"></h6>
+                <br />
+                <img
+                  id="logoimage"
+                  alt="logo"
+                  src="./img/favicon (3).ico"
+                  style="width: 200px; height: 150px; border-radius: 20px"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-6">
+            <div class="row">
+              <div class="col-lg-7 col-md-12 pt-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h4 class="text-light mb-0">Get In Touch</h4>
+                </div>
+                <div class="d-flex mb-2 location-section">
+                  <i class="bi bi-geo-alt text-primary me-2"></i>
+                  <p class="mb-0 contact-data">
+                    Office No:14/390-F7 | 4th Floor KNA Plaza | Kundannoor Jn |
+                    Cochin PO Box : 682304 | Kerala - India
+                  </p>
+                </div>
+                <div class="d-flex mb-2 email-section">
+                  <i class="bi bi-envelope-open text-primary me-2"></i>
+                  <p class="mb-0 contact-data">example@gmail.com</p>
+                </div>
+                <div class="d-flex mb-2 phone-section2">
+                  <i class="bi bi-telephone text-primary me-2"></i>
+                  <p class="mb-0 contact-data2">0484-352872 / 3516220</p>
+                  <!-- <p class="mb-0 contact-data3"></p>
+                     <p class="mb-0 contact-data4"></p> -->
+                </div>
+                <div id="connectWithUsBanner" class="d-flex mt-4"></div>
+              </div>
+              <div class="col-lg-3 col-md-12 pt-0 pt-lg-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h4 class="text-light mb-0">Quick Links</h4>
+                </div>
+                <div
+                  class="link-animated d-flex flex-column justify-content-start"
+                >
+                  <a class="text-light mb-2" href="./index.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Home</a
+                  >
+                  <a class="text-light mb-2" href="./about.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>About
+                    Us</a
+                  >
+
+                  <a class="text-light mb-2" href="./contact.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Contact
+                    Us</a
+                  >
+                  <a class="text-light mb-2" href="./ourteam.html">
+                    <i class="bi bi-arrow-right text-primary me-2"></i>Our
+                    team</a
+                  >
+                  <a class="text-light mb-2" href="./corparateteam.html">
+                    <i class="bi bi-arrow-right text-primary me-2"></i>Corporate
+                    Team</a
+                  >
+                  <a class="text-light mb-2" href="./timelinje.html">
+                    <i class="bi bi-arrow-right text-primary me-2"></i
+                    >Timeline</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="jumbotron-fluid text-white" style="background: #3e3e3e">
+      <div class="container text-center">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-6">
+            <div
+              class="d-flex align-items-center justify-content-center"
+              style="height: 75px"
+            >
+              <p class="mb-0">
+                &copy; 2023 Hamad International Shipping Pvt. Ltd . All rights
+                reserved. Privacy Policy | Terms of Service
+                <a
+                  class="text-white border-bottom"
+                  href="#"
+                  id="footerMessage"
+                ></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+    
+    <!-- Back to Top -->
+    <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a> -->
+    
+    
+    
+    <!-- JavaScript Libraries -->
+    <script>
+        
+		
+	
+    </script>
+    <script src="js/script.js"></script>
+    <script src="lib/code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="lib/cdn.jsdelivr.net/npm/bootstrap%405.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+
+     <script>
+      $(document).ready(function () {
+        $("#carouselExampleIndicators").carousel();
+      });
+    </script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+    <script>
+      $(function () {
+        var timelineSwiper = new Swiper(".timeline .swiper-container", {
+          direction: "vertical",
+          loop: false,
+          speed: 1600,
+          pagination: ".swiper-pagination",
+          paginationBulletRender: function (swiper, index, className) {
+            var year = document
+              .querySelectorAll(".swiper-slide")
+              [index].getAttribute("data-year");
+            return '<span class="' + className + '">' + year + "</span>";
+          },
+          paginationClickable: true,
+          nextButton: ".swiper-button-next",
+          prevButton: ".swiper-button-prev",
+          breakpoints: {
+            768: {
+              direction: "horizontal",
+            },
+          },
+        });
+      });
+   
+    </script>
+</body>
+
+</html>

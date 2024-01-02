@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>timeline design using css 3</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./img/favicon (3).ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <!-- Popper.js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Your Custom JS -->
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/favicon (3).ico" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;family=Rubik:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/356940580b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="lib/cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="lib/cdn.jsdelivr.net/npm/bootstrap-icons%401.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+      .container-fluid {
+        max-width: 100%;
+        width: 1650px;
+      }
+    </style>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "poppins", sans-serif;
+        font-size: 14px;
+      }
+      .time {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        flex-direction: column;
+      }
+
+      .timeline {
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 5px 25px 5px rgba(0, 0, 0, 0.2);
+      }
+      .timeline .swiper-container {
+        height: 100vh;
+        width: 100%;
+        position: relative;
+      }
+      .timeline .swiper-wrapper {
+        transition: 2s cubic-bezier(0.68, -0.4, 0.27, 1.34) 0.2s;
+      }
+      .timeline .swiper-slide {
+        position: relative;
+        color: #fff;
+        overflow: hidden;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+      .timeline .swiper-slide::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        right: -115%;
+        bottom: -10%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        box-shadow: -230px 0 150px 60vw rgba(0, 0, 0, 0.7);
+        border-radius: 100%;
+      }
+      .timeline .swiper-slide-content {
+        position: absolute;
+        text-align: center;
+        width: 80%;
+        max-width: 310px;
+        right: 50%;
+        top: 13%;
+        transform: translate(50%, 0);
+        font-size: 12px;
+        z-index: 2;
+      }
+      .timeline .swiper-slide .timeline-year {
+        display: block;
+        font-size: 22px !important;
+        margin-bottom: 50px;
+        transform: translate3d(20px, 0, 0);
+        color: orange;
+        font-style: italic;
+        font-weight: 300;
+        opacity: 0;
+        transition: 0.2s ease 0.4s;
+      }
+      .timeline .swiper-slide .timeline-title {
+        font-weight: 800;
+        font-size: 44px !important;
+        margin: 0 0 30px;
+        opacity: 0;
+        transform: translate3d(20px, 0, 0);
+        transition: 0.2s ease 0.5s;
+      }
+      .timeline .swiper-slide .timeline-text {
+        line-height: 1.8;
+        opacity: 0;
+        transform: translate3d(20px, 0, 0);
+        transition: 0.2s ease 0.6s;
+        font-size: 20px;
+      }
+      .timeline .swiper-slide-active .timeline-year {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: 0.4s ease 1.6s;
+      }
+      .timeline .swiper-slide-active .timeline-title {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: 0.4s ease 1.7s;
+      }
+      .timeline .swiper-slide-active .timeline-text {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: 0.4s ease 1.8s;
+      }
+      .timeline .swiper-pagination {
+        right: 15% !important;
+        height: 100%;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        font-style: italic;
+        font-weight: 300;
+        font-size: 18px;
+        z-index: 1;
+      }
+      .timeline .swiper-pagination::before {
+        content: "";
+        position: absolute;
+        left: -30px;
+        top: 0;
+        height: 100%;
+        width: 1px;
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+      .timeline .swiper-pagination-bullet {
+        width: auto;
+        height: auto;
+        text-align: center;
+        opacity: 1;
+        background: transparent;
+        color: #d4a024;
+        margin: 15px 0 !important;
+        position: relative;
+      }
+      .timeline .swiper-pagination-bullet::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: -32.5px;
+        width: 6px;
+        height: 6px;
+        border-radius: 100%;
+        background-color: #d4a024;
+        transform: scale(0);
+        transition: 0.2s;
+      }
+      .timeline .swiper-pagination-bullet-active {
+        color: #d4a024;
+      }
+      .timeline .swiper-pagination-bullet-active::before {
+        transform: scale(1);
+      }
+      .timeline .swiper-button-next,
+      .timeline .swiper-button-prev {
+        background-size: 20px 20px;
+        top: 15%;
+        width: 20px;
+        height: 20px;
+        margin-top: 0;
+        z-index: 2;
+        transition: 0.2s;
+      }
+      .timeline .swiper-button-prev {
+        left: 8%;
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23d4a024'%2F%3E%3C%2Fsvg%3E");
+      }
+      .timeline .swiper-button-prev:hover {
+        transform: translateX(-3px);
+      }
+      .timeline .swiper-button-next {
+        right: 8%;
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23d4a024'%2F%3E%3C%2Fsvg%3E");
+      }
+      .timeline .swiper-button-next:hover {
+        transform: translateX(3px);
+      }
+      @media screen and (min-width: 768px) {
+        .timeline .swiper-slide::after {
+          right: -30%;
+          bottom: -8%;
+          width: 240px;
+          height: 50%;
+          box-shadow: -230px 0 150px 50vw rgba(0, 0, 0, 0.7);
+        }
+        .timeline .swiper-slide-content {
+          right: 30%;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 310px;
+          font-size: 11px;
+          text-align: right;
+        }
+        .timeline .swiper-slide .timeline-year {
+          margin-bottom: 0;
+          font-size: 32px;
+        }
+        .timeline .swiper-slide .timeline-title {
+          font-size: 46px;
+          margin: 0;
+        }
+        .timeline .swiper-pagination {
+          display: flex;
+        }
+        .timeline .swiper-button-prev {
+          top: 15%;
+          left: auto;
+          right: 15%;
+          transform: rotate(90deg) translate(0, 10px);
+        }
+        .timeline .swiper-button-prev:hover {
+          transform: rotate(90deg) translate(-3px, 10px);
+        }
+        .timeline .swiper-button-next {
+          top: auto;
+          bottom: 15%;
+          right: 15%;
+          transform: rotate(90deg) translate(0, 10px);
+        }
+        .timeline .swiper-button-next:hover {
+          transform: rotate(90deg) translate(3px, 10px);
+        }
+      }
+      @media screen and (min-width: 1024px) {
+        .timeline .swiper-slide::after {
+          right: -20%;
+          bottom: -12%;
+          width: 240px;
+          height: 50%;
+          box-shadow: -230px 0 150px 39vw rgba(0, 0, 0, 0.7);
+        }
+        .timeline .swiper-slide-content {
+          right: 25%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-custom navbar-mainbg">
+      <a class="navbar-brand navbar-logo" href="./index.html"
+        ><img
+          src="./img/favicon (3).ico"
+          style="height: 100px; width: 100px"
+          alt=""
+        />
+        <!-- NatureNurture Agro -->
+      </a>
+      <i
+        class="fas fa-bars text-white navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      ></i>
+      <!-- <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white"></i>
+        </button> -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <div class="hori-selector">
+            <div class="left"></div>
+            <div class="right"></div>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link active" href="./index.html">
+              <!-- <i class="fa-solid fa-house"></i> -->
+              Home</a
+            >
+          </li>
+          <!-- <a href="./service.html" class="nav-item nav-link" id="services" style="display: none">Our
+                    Courses</a>
+                <a href="./clients.html" class="nav-item nav-link" id="clients" style="display: none">Affiliations</a>
+                <a href="./founders.html" class="nav-item nav-link" id="founders" style="display: none">Principal
+                    Message</a>
+                <a href="./payments.html" class="nav-item nav-link" id="payments" style="display: none">Payments</a> -->
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html">
+              <!-- <i class="fa-solid fa-address-book"></i> -->
+              About Us</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.html">
+              <!-- <i class="fa-solid fa-address-card"></i> -->
+              Contact Us</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./timelinje.html">
+              <!-- <i class="fa-solid fa-address-card"></i> -->
+              Timeline</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./ourteam.html">
+              <!-- <i class="fa-solid fa-address-card"></i> -->
+              Our Team</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./corparateteam.html">
+              <!-- <i class="fa-solid fa-address-card"></i> -->
+              Corporate Team</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="time">
+      <div class="timeline">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div
+              class="swiper-slide"
+              style="background-image: url(./img/time1.jpg)"
+              data-year="NOV 2023"
+            >
+              <div class="swiper-slide-content">
+                <span class="timeline-year">2023</span>
+                <h4 class="timeline-title" style="color: #fff">NOVEMBER 1st</h4>
+                <p class="timeline-text">
+                  First Indian Branch of Hamad International Shipping opens at
+                  cochin with great expectations
+                </p>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="background-image: url(./img/time2.jpg)"
+              data-year=" DEC 2023"
+            >
+              <div class="swiper-slide-content">
+                <span class="timeline-year">2023</span>
+                <h4 class="timeline-title" style="color: #fff">DECEMBER</h4>
+                <p class="timeline-text">
+                  Despite the latest technologies and online services, there are
+                  a lot of things that can go wrong while shipping good &
+                  products.
+                </p>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="background-image: url(./img/time3.jpg)"
+              data-year="JAN 2024"
+            >
+              <div class="swiper-slide-content">
+                <span class="timeline-year">2024</span>
+                <h3 class="timeline-title" style="color: #fff">JANUARY</h3>
+                <p class="timeline-text">
+                  Steamer Agency statutory compliances with Cochin Customs& DP
+                  world completed
+                </p>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="background-image: url(./img/time4.jpg)"
+              data-year="FEB 2024"
+            >
+              <div class="swiper-slide-content">
+                <span class="timeline-year">2024</span>
+                <h4 class="timeline-title" style="color: #fff">FEBRUARY</h4>
+                <p class="timeline-text">
+                  Deploy strategic networks with compelling Shipping agency
+                  business needs and establishing new agency business
+                </p>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="background-image: url(./img/time5.jpg)"
+              data-year="MAR 2024"
+            >
+              <div class="swiper-slide-content">
+                <span class="timeline-year">2024</span>
+                <h4 class="timeline-title" style="color: #fff">MARCH</h4>
+                <p class="timeline-text">
+                  Disseminate standardized metrics for commercial growth
+                </p>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="background-image: url(./img/time6.jpg)"
+              data-year="APR 2024"
+            >
+              <div class="swiper-slide-content">
+                <span class="timeline-year">2024</span>
+                <h4 class="timeline-title" style="color: #fff">APRIL</h4>
+                <p class="timeline-text">
+                  Foster holistically superior cutting edge methodologies for
+                  business progression
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div
+      class="jumbotron-fluid text-light mt-2 wow fadeInUp"
+      data-wow-delay="0.1s"
+      style="background: linear-gradient(180deg, rgb(44, 43, 43), black)"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <div
+              id="footer-header"
+              class="d-flex flex-column align-items-center justify-content-center text-center h-100 p-4"
+            >
+              <a href="index.html" class="navbar-brand">
+                <h6 class="m-0 text-success" id="webAppName"></h6>
+                <br />
+                <img
+                  id="logoimage"
+                  alt="logo"
+                  src="./img/favicon (3).ico"
+                  style="width: 200px; height: 150px; border-radius: 20px"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-6">
+            <div class="row">
+              <div class="col-lg-7 col-md-12 pt-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h4 class="text-light mb-0">Get In Touch</h4>
+                </div>
+                <div class="d-flex mb-2 location-section">
+                  <i class="bi bi-geo-alt text-primary me-2"></i>
+                  <p class="mb-0 contact-data">
+                    Office No:14/390-F7 | 4th Floor KNA Plaza | Kundannoor Jn |
+                    Cochin PO Box : 682304 | Kerala - India
+                  </p>
+                </div>
+                <div class="d-flex mb-2 email-section">
+                  <i class="bi bi-envelope-open text-primary me-2"></i>
+                  <p class="mb-0 contact-data">example@gmail.com</p>
+                </div>
+                <div class="d-flex mb-2 phone-section2">
+                  <i class="bi bi-telephone text-primary me-2"></i>
+                  <p class="mb-0 contact-data2">0484-352872 / 3516220</p>
+                  <!-- <p class="mb-0 contact-data3"></p>
+                     <p class="mb-0 contact-data4"></p> -->
+                </div>
+                <div id="connectWithUsBanner" class="d-flex mt-4"></div>
+              </div>
+              <div class="col-lg-3 col-md-12 pt-0 pt-lg-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h4 class="text-light mb-0">Quick Links</h4>
+                </div>
+                <div
+                  class="link-animated d-flex flex-column justify-content-start"
+                >
+                  <a class="text-light mb-2" href="./index.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Home</a
+                  >
+                  <a class="text-light mb-2" href="./about.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>About
+                    Us</a
+                  >
+
+                  <a class="text-light mb-2" href="./contact.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Contact
+                    Us</a
+                  >
+                  <a class="text-light mb-2" href="./ourteam.html">
+                    <i class="bi bi-arrow-right text-primary me-2"></i>Our
+                    team</a
+                  >
+                  <a class="text-light mb-2" href="./corparateteam.html">
+                    <i class="bi bi-arrow-right text-primary me-2"></i>Corporate
+                    Team</a
+                  >
+                  <a class="text-light mb-2" href="./timelinje.html">
+                    <i class="bi bi-arrow-right text-primary me-2"></i
+                    >Timeline</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="jumbotron-fluid text-white" style="background: #3e3e3e">
+      <div class="container text-center">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-6">
+            <div
+              class="d-flex align-items-center justify-content-center"
+              style="height: 75px"
+            >
+              <p class="mb-0">
+                &copy; 2023 Hamad International Shipping Pvt. Ltd . All rights
+                reserved. Privacy Policy | Terms of Service
+                <a
+                  class="text-white border-bottom"
+                  href="#"
+                  id="footerMessage"
+                ></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+    <script>
+      $(function () {
+        var timelineSwiper = new Swiper(".timeline .swiper-container", {
+          direction: "vertical",
+          loop: false,
+          speed: 1600,
+          pagination: ".swiper-pagination",
+          paginationBulletRender: function (swiper, index, className) {
+            var year = document
+              .querySelectorAll(".swiper-slide")
+              [index].getAttribute("data-year");
+            return '<span class="' + className + '">' + year + "</span>";
+          },
+          paginationClickable: true,
+          nextButton: ".swiper-button-next",
+          prevButton: ".swiper-button-prev",
+          breakpoints: {
+            768: {
+              direction: "horizontal",
+            },
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

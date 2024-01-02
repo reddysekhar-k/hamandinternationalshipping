@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Popper.js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Your Custom JS -->
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/favicon (3).ico" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;family=Rubik:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/356940580b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="lib/cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="lib/cdn.jsdelivr.net/npm/bootstrap-icons%401.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+    <style>
+      .container-fluid {
+        max-width: 100%;
+        width: 1650px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-custom navbar-mainbg">
+      <a class="navbar-brand navbar-logo" href="./index.html"
+        ><img
+          src="img/favicon (3).ico"
+          style="height: 100px; width: 100px"
+          alt=""
+      /></a>
+      <i
+        class="fas fa-bars text-white navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      ></i>
+      <!-- <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white"></i>
+        </button> -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <div class="hori-selector">
+            <div class="left"></div>
+            <div class="right"></div>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">
+              <!-- <i class="fa-solid fa-house"></i> -->
+              Home</a
+            >
+          </li>
+          <a
+            href="./service.html"
+            class="nav-item nav-link"
+            id="services"
+            style="display: none"
+            >Our Courses</a
+          >
+          <a
+            href="./clients.html"
+            class="nav-item nav-link"
+            id="clients"
+            style="display: none"
+            >Affiliations</a
+          >
+          <a
+            href="./founders.html"
+            class="nav-item nav-link"
+            id="founders"
+            style="display: none"
+            >Principal Message</a
+          >
+          <a
+            href="./payments.html"
+            class="nav-item nav-link"
+            id="payments"
+            style="display: none"
+            >Payments</a
+          >
+          <li class="nav-item">
+            <a class="nav-link active" href="./about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./timelinje.html">
+              <!-- <i class="fa-solid fa-address-card"></i> -->
+              Timeline</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./ourteam.html">
+              <!-- <i class="fa-solid fa-address-card"></i> -->
+              Our Team</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./corparateteam.html">
+              <!-- <i class="fa-solid fa-address-card"></i> -->
+              Corporate Team</a
+            >
+          </li>
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              id="more"
+              data-bs-toggle="dropdown"
+              style="display: none"
+              >More</a
+            >
+            <div
+              class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start m-0"
+            >
+              <a
+                href="./gallery.html"
+                class="dropdown-item"
+                id="gallery"
+                style="display: none"
+                >Brochures and Images</a
+              >
+              <!-- <a href="team.html" class="dropdown-item">Images</a> -->
+              <a
+                href="./reviews.html"
+                class="dropdown-item"
+                id="reviews"
+                style="display: none"
+                >Testimonials</a
+              >
+              <a
+                href="./careers.html"
+                class="dropdown-item"
+                id="careers"
+                style="display: none"
+                >Careers</a
+              >
+              <a
+                href="./products.html"
+                class="dropdown-item"
+                id="products"
+                style="display: none"
+                >Our Products</a
+              >
+              <!-- <a href="testimonial.html" class="dropdown-item">Testimonial</a> -->
+            </div>
+          </div>
+          <!-- <li class="nav-item">
+                    <a class="nav-link" href="./login.html"><i class="fa-solid fa-right-to-bracket"></i>Login</a>
+                </li> -->
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+              id="adminActivites"
+              style="display: none"
+              >Admin Activities</a
+            >
+            <div
+              class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start m-0"
+            >
+              <a href="./content-edit.html" class="dropdown-item"
+                >Change Website Content <br />Services and Products</a
+              >
+              <a href="./leads.html" class="dropdown-item"
+                >Courses Applicants</a
+              >
+              <a href="./paymentLeads.html" class="dropdown-item"
+                >Payments Leads</a
+              >
+              <a href="./careerLeads.html" class="dropdown-item"
+                >Carrer Leads</a
+              >
+              <a href="./add-gallery.html" class="dropdown-item"
+                >Add Brochure and Images</a
+              >
+              <a href="./list-gallery.html" class="dropdown-item"
+                >List Brochure and Images</a
+              >
+              <a href="./uploadContact.html" class="dropdown-item">
+                Upload Contact Info</a
+              >
+              <a href="uploadPayment.html" class="dropdown-item">
+                Upload Payment Info</a
+              >
+              <a href="upload-logo.html" class="dropdown-item">Upload Logo</a>
+              <a href="./uploadHomePageImg.html" class="dropdown-item"
+                >Upload Home Page Image</a
+              >
+              <a href="./selectLogo.html" class="dropdown-item">Select Logo</a>
+              <a href="./selectHomePageImg.html" class="dropdown-item"
+                >Select Home Page Image</a
+              >
+              <a href="./ManageNotifications.html" class="dropdown-item"
+                >Manage Notifications</a
+              >
+              <a href="./uploadReview.html" class="dropdown-item"
+                >Manage Testimonials</a
+              >
+              <a href="./uploadCareers.html" class="dropdown-item"
+                >Manage Careers</a
+              >
+              <a href="uploadClient.html" class="dropdown-item"
+                >Manage Affiliations</a
+              >
+              <a href="./uploadFounder.html" class="dropdown-item"
+                >Manage Principal Message</a
+              >
+              <button
+                id="logout"
+                style="color: red"
+                class="nav-link custom-brand"
+                data-bs-toggle="modal"
+                data-bs-target="#logoutConfirmationModal"
+              >
+                Logout
+              </button>
+              <!-- <a href="testimonial.html" class="dropdown-item">Testimonial</a> -->
+            </div>
+          </div>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- About Us Start -->
+    <div
+      class="container-fluid wow fadeInUp"
+      data-wow-delay="0.1s"
+      id="aboutUsContainer"
+    >
+      <div class="py-5">
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="section-title position-relative pb-3 mb-3">
+              <h1 class="fw-bold text-dark text-uppercase">About Us</h1>
+              <!-- <h1 class="mb-0 " id="aboutUsHeader" style="color: #51acfb;">NatureNurture Agro
+                        </h1> -->
+            </div>
+            <h5 class="h4-with-space">
+              At Hamad International Shipping (HIS) Company Cochin is part of
+              Delta Shipping agency enterprise Qatar , we empower organizations
+              personnel to foster collaborative thinking to further drive the
+              workplace innovation to deliver desired customer centric logistic
+              solutions benefiting the shipping & logistics industry at large
+              and the inhouse customer in particular by in depth analysis of
+              customers requirements well within his financial constraints
+              bridging his immediate requirements to his full satisfaction where
+              by ensuring customer satisfaction verbatim, we always foster
+              business climate on a consumer-first mindset cementing a long
+              lasting professional relationship, we are a cut above from others
+              in this logistic race …
+            </h5>
+
+            <p class="mb-4 text-white" id="aboutUsCaption">
+              Harmony in Agriculture, NatureNurture Agro.
+            </p>
+            <div class="row g-0 mb-3" id="aboutUsPoints">
+              <!-- Points will be dynamically added here -->
+            </div>
+            <br />
+            <br />
+          </div>
+          <div class="col-lg-5" style="min-height: 530px">
+            <div class="position-relative h-100">
+              <img
+                class="position-absolute w-100 h-100 rounded wow zoomIn"
+                data-wow-delay="0.9s"
+                src="./img/about-ship-2.jpeg"
+                id="aboutUsImage"
+                style="object-fit: cover; box-shadow: 0px 0px 10px 1px #d78181"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About Us End -->
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content" style="background: rgba(9, 30, 62, 0.7)">
+          <div class="modal-header border-0">
+            <button
+              type="button"
+              class="btn bg-white btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div
+            class="modal-body d-flex align-items-center justify-content-center"
+          >
+            <div class="input-group" style="max-width: 600px">
+              <input
+                type="text"
+                class="form-control bg-transparent border-primary p-3"
+                placeholder="Type search keyword"
+              />
+              <button class="btn btn-primary px-4">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+    <!-- logout -->
+    <div
+      class="modal fade"
+      id="logoutConfirmationModal"
+      tabindex="-1"
+      aria-labelledby="logoutConfirmationModalLabel"
+      data-bs-backdrop="static"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="logoutConfirmationModalLabel">
+              Confirm Logout
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">Are you sure you want to logout?</div>
+          <div class="modal-footer">
+            <!-- Cancel button to close the modal -->
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <!-- Logout button to trigger the logout -->
+            <button type="button" class="btn btn-primary" id="confirmLogoutBtn">
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Start -->
+    <!-- <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" id="aboutUsContainer">
+		<div class="container py-5">
+			<div class="row g-5">
+				<div class="col-lg-7">
+					<div class="section-title position-relative pb-3 mb-5">
+						<h5 class="fw-bold text-primary text-uppercase">About Us</h5>
+						<h1 class="mb-0" id="aboutUsHeader"></h1>
+					</div>
+					<p class="mb-4" id="aboutUsCaption"></p>
+					<div class="row g-0 mb-3" id="aboutUsPoints"> -->
+    <!-- Points will be dynamically added here -->
+    <!-- </div>
+					<h3 class="mb-0" id="aboutUsFooter"></h3>
+					<a href="contact.html" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn"
+						data-wow-delay="0.9s">Contact Us</a>
+				</div>
+				<div class="col-lg-5" style="min-height: 500px">
+					<div class="position-relative h-100">
+						<img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s"
+							id="aboutUsImage" style="object-fit: cover" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+    <!-- About End -->
+
+    <!-- Vendor Start -->
+    <!-- <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" id="vendorSection">
+		<div class="container py-5 mb-5">
+			<div class="bg-white">
+				<div class="owl-carousel vendor-carousel" id="vendor-carousel"> -->
+    <!-- Vendor logos and names will be dynamically added here -->
+    <!-- </div>
+			</div>
+		</div>
+	</div> -->
+    <!-- Vendor End -->
+
+    <!-- Footer Start -->
+    <div
+      class="jumbotron-fluid text-light mt-2 wow fadeInUp"
+      data-wow-delay="0.1s"
+      style="background: linear-gradient(180deg, rgb(44, 43, 43), black)"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <div
+              id="footer-header"
+              class="d-flex flex-column align-items-center justify-content-center text-center h-100 p-4"
+            >
+              <a href="index.html" class="navbar-brand">
+                <h6 class="m-0 text-success" id="webAppName"></h6>
+                <br />
+                <img
+                  id="logoimage"
+                  alt="logo"
+                  src="./img/favicon (3).ico"
+                  style="width: 200px; height: 150px; border-radius: 20px"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-6">
+            <div class="row">
+              <div class="col-lg-7 col-md-12 pt-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h4 class="text-light mb-0">Get In Touch</h4>
+                </div>
+                <div class="d-flex mb-2 location-section">
+                  <i class="bi bi-geo-alt text-primary me-2"></i>
+                  <p class="mb-0 contact-data">
+                    Office No:14/390-F7 | 4th Floor KNA Plaza | Kundannoor Jn |
+                    Cochin PO Box : 682304 | Kerala - India
+                  </p>
+                </div>
+                <div class="d-flex mb-2 email-section">
+                  <i class="bi bi-envelope-open text-primary me-2"></i>
+                  <p class="mb-0 contact-data">example@gmail.com</p>
+                </div>
+                <div class="d-flex mb-2 phone-section2">
+                  <i class="bi bi-telephone text-primary me-2"></i>
+                  <p class="mb-0 contact-data2">0484-352872 / 3516220</p>
+                  <!-- <p class="mb-0 contact-data3"></p>
+                     <p class="mb-0 contact-data4"></p> -->
+                </div>
+                <div id="connectWithUsBanner" class="d-flex mt-4"></div>
+              </div>
+              <div class="col-lg-3 col-md-12 pt-0 pt-lg-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h4 class="text-light mb-0">Quick Links</h4>
+                </div>
+                <div
+                  class="link-animated d-flex flex-column justify-content-start"
+                >
+                  <a class="text-light mb-2" href="./index.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Home</a
+                  >
+                  <a class="text-light mb-2" href="./about.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>About
+                    Us</a
+                  >
+
+                  <a class="text-light mb-2" href="./contact.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Contact
+                    Us</a
+                  >
+                  <a class="text-light mb-2" href="./ourteam.html">
+                    <i class="bi bi-arrow-right text-primary me-2"></i>Our
+                    team</a
+                  >
+                  <a class="text-light mb-2" href="./corparateteam.html">
+                    <i class="bi bi-arrow-right text-primary me-2"></i>Corporate
+                    Team</a
+                  >
+                  <a class="text-light mb-2" href="./timelinje.html">
+                    <i class="bi bi-arrow-right text-primary me-2"></i
+                    >Timeline</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="jumbotron-fluid text-white" style="background: #3e3e3e">
+      <div class="container text-center">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-6">
+            <div
+              class="d-flex align-items-center justify-content-center"
+              style="height: 75px"
+            >
+              <p class="mb-0">
+                &copy; 2023 Hamad International Shipping Pvt. Ltd . All rights
+                reserved. Privacy Policy | Terms of Service
+                <a
+                  class="text-white border-bottom"
+                  href="#"
+                  id="footerMessage"
+                ></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="js/script.js"></script>
+    <script src="lib/code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="lib/cdn.jsdelivr.net/npm/bootstrap%405.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+  </body>
+</html>

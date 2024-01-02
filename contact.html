@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Popper.js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Your Custom JS -->
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/favicon (3).ico" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;family=Rubik:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/356940580b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="lib/cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="lib/cdn.jsdelivr.net/npm/bootstrap-icons%401.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+    <style>
+      .container-fluid {
+        max-width: 100%;
+        width: 1650px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-custom navbar-mainbg">
+      <a class="navbar-brand navbar-logo" href="./index.html"
+        ><img
+          src="img/favicon (3).ico"
+          style="height: 100px; width: 100px"
+          alt=""
+      /></a>
+      <i
+        class="fas fa-bars text-white navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      ></i>
+      <!-- <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white"></i>
+        </button> -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <div class="hori-selector">
+            <div class="left"></div>
+            <div class="right"></div>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">
+              <!-- <i class="fa-solid fa-house"></i> -->
+              Home</a
+            >
+          </li>
+          <a
+            href="./service.html"
+            class="nav-item nav-link"
+            id="services"
+            style="display: none"
+            >Our Courses</a
+          >
+          <a
+            href="./clients.html"
+            class="nav-item nav-link"
+            id="clients"
+            style="display: none"
+            >Affiliations</a
+          >
+          <a
+            href="./founders.html"
+            class="nav-item nav-link"
+            id="founders"
+            style="display: none"
+            >Principal Message</a
+          >
+          <a
+            href="./payments.html"
+            class="nav-item nav-link"
+            id="payments"
+            style="display: none"
+            >Payments</a
+          >
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="./contact.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./timelinje.html">
+              <!-- <i class="fa-solid fa-address-card"></i> -->
+              Timeline</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./ourteam.html">
+              <!-- <i class="fa-solid fa-address-card"></i> -->
+              Our Team</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./corparateteam.html">
+              <!-- <i class="fa-solid fa-address-card"></i> -->
+              Corporate Team</a
+            >
+          </li>
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              id="more"
+              data-bs-toggle="dropdown"
+              style="display: none"
+              >More</a
+            >
+            <div
+              class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start m-0"
+            >
+              <a
+                href="./gallery.html"
+                class="dropdown-item"
+                id="gallery"
+                style="display: none"
+                >Brochures and Images</a
+              >
+              <!-- <a href="team.html" class="dropdown-item">Images</a> -->
+              <a
+                href="./reviews.html"
+                class="dropdown-item"
+                id="reviews"
+                style="display: none"
+                >Testimonials</a
+              >
+              <a
+                href="./careers.html"
+                class="dropdown-item"
+                id="careers"
+                style="display: none"
+                >Careers</a
+              >
+              <a
+                href="./products.html"
+                class="dropdown-item"
+                id="products"
+                style="display: none"
+                >Our Products</a
+              >
+              <!-- <a href="testimonial.html" class="dropdown-item">Testimonial</a> -->
+            </div>
+          </div>
+          <!-- <li class="nav-item">
+                    <a class="nav-link" href="./login.html"><i class="fa-solid fa-right-to-bracket"></i>Login</a>
+                </li> -->
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+              id="adminActivites"
+              style="display: none"
+              >Admin Activities</a
+            >
+            <div
+              class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start m-0"
+            >
+              <a href="./content-edit.html" class="dropdown-item"
+                >Change Website Content <br />Services and Products</a
+              >
+              <a href="./leads.html" class="dropdown-item"
+                >Courses Applicants</a
+              >
+              <a href="./paymentLeads.html" class="dropdown-item"
+                >Payments Leads</a
+              >
+              <a href="./careerLeads.html" class="dropdown-item"
+                >Carrer Leads</a
+              >
+              <a href="./add-gallery.html" class="dropdown-item"
+                >Add Brochure and Images</a
+              >
+              <a href="./list-gallery.html" class="dropdown-item"
+                >List Brochure and Images</a
+              >
+              <a href="./uploadContact.html" class="dropdown-item">
+                Upload Contact Info</a
+              >
+              <a href="uploadPayment.html" class="dropdown-item">
+                Upload Payment Info</a
+              >
+              <a href="upload-logo.html" class="dropdown-item">Upload Logo</a>
+              <a href="./uploadHomePageImg.html" class="dropdown-item"
+                >Upload Home Page Image</a
+              >
+              <a href="./selectLogo.html" class="dropdown-item">Select Logo</a>
+              <a href="./selectHomePageImg.html" class="dropdown-item"
+                >Select Home Page Image</a
+              >
+              <a href="./ManageNotifications.html" class="dropdown-item"
+                >Manage Notifications</a
+              >
+              <a href="./uploadReview.html" class="dropdown-item"
+                >Manage Testimonials</a
+              >
+              <a href="./uploadCareers.html" class="dropdown-item"
+                >Manage Careers</a
+              >
+              <a href="uploadClient.html" class="dropdown-item"
+                >Manage Affiliations</a
+              >
+              <a href="./uploadFounder.html" class="dropdown-item"
+                >Manage Principal Message</a
+              >
+              <button
+                id="logout"
+                style="color: red"
+                class="nav-link custom-brand"
+                data-bs-toggle="modal"
+                data-bs-target="#logoutConfirmationModal"
+              >
+                Logout
+              </button>
+              <!-- <a href="testimonial.html" class="dropdown-item">Testimonial</a> -->
+            </div>
+          </div>
+        </ul>
+      </div>
+    </nav>
+    <!-- <div class="container-fluid  py-5 bg-header" style="margin-bottom: 90px">
+        <div class="row py-5">
+            <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                <h1 class="display-4 text-white animated zoomIn">Contact Us</h1>
+                <a href="./index.html" class="h5 text-white">Home</a>
+                <i class="far fa-circle text-white px-2"></i>
+                <a href="#" class="h5 text-white">Contact</a>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Contact Start -->
+    <div class="wow fadeInUp contactus mb-5" data-wow-delay="0.1s">
+      <div class="container-fluid py-5">
+        <div class="section-title text-center position-relative pb-3 mb-5 mt-5">
+          <h1 class="mb-0">
+            Want To Know More?<br />
+            Reach out to us
+          </h1>
+        </div>
+        <div class="row align-items-center justify-content-between">
+          <div class="col-lg-6">
+            <div class="col-lg-12 text-center mt-2 mb-4">
+              <div
+                class="d-flex align-items-center wow fadeIn"
+                data-wow-delay="0.1s"
+              >
+                <div
+                  class="d-flex align-items-center justify-content-center rounded-circle"
+                  style="
+                    width: 50px;
+                    height: 50px;
+                    background-color: #51acfb;
+                    padding-left: 5px;
+                  "
+                >
+                  <i class="fa fa-phone-alt text-white ml-2"></i>
+                </div>
+                <div class="ps-4">
+                  <h5 class="mb-2">Call to ask any question</h5>
+                  <h5 class="text-primary mb-0 text-left" id="mobile">
+                    0484-352872 / 3516220
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 mb-4">
+              <div
+                class="d-flex align-items-center wow fadeIn"
+                data-wow-delay="0.4s"
+              >
+                <div
+                  class="d-flex align-items-center justify-content-center rounded-circle"
+                  style="
+                    width: 50px;
+                    height: 50px;
+                    background-color: #51acfb;
+                    padding-left: 5px;
+                  "
+                >
+                  <i class="fa fa-envelope-open text-white ml-2"></i>
+                </div>
+                <div class="ps-4">
+                  <h5 class="mb-2">Email to get free quote</h5>
+                  <h5 class="text-primary mb-0" id="email">
+                    example@gmail.com
+                  </h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-12 mb-5">
+              <div
+                class="d-flex align-items-center wow fadeIn"
+                data-wow-delay="0.8s"
+              >
+                <div
+                  class="d-flex align-items-center justify-content-center rounded-circle"
+                  style="
+                    width: 70px;
+                    height: 50px;
+                    background-color: #51acfb;
+                    padding-left: 5px;
+                  "
+                >
+                  <i class="fa fa-map-marker-alt text-white ml-1"></i>
+                </div>
+                <div class="ps-4">
+                  <h5 class="mb-2">Visit our office</h5>
+                  <h5 class="text-primary mb-0" id="location">
+                    14/390-F7 | 4th Floor KNA Plaza | Kundannoor Jn | Cochin PO
+                    Box : 682304 | Kerala - India
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div class="social-buttons mb-5">
+              <a
+                href="#"
+                class="py-md-3 px-md-5 me-3 animated slideInLeft text-white rounded-3"
+                style="
+                  padding: 10px 20px;
+                  text-decoration: none;
+                  background-color: #047b53;
+                "
+                id="whatsappButton"
+                ><i class="fab fa-whatsapp me-3"></i>Whatsapp</a
+              >
+              <!-- <a href="#" class="py-md-3 px-md-5 me-3 animated slideInLeft text-white rounded-3"
+                            id="showMapsBtn"
+                            style=" padding: 10px 20px;background-color: #044690 ;text-decoration: none;"><i
+                                class="fas fa-map-marker-alt me-3"></i>Show us
+                            On Map</a> -->
+            </div>
+            <br />
+            <!-- Your map  -->
+            <div id="map-container">
+              <div class="map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6770.858058267106!2d77.60521697443556!3d12.918208345676383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae14fe7cda317d%3A0xf0de5914c956b5!2sUdupi%20Garden%20Park!5e0!3m2!1sen!2sin!4v1702647745298!5m2!1sen!2sin"
+                  width="100%"
+                  height="300"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                >
+                </iframe>
+              </div>
+            </div>
+          </div>
+
+          <!--contact us-->
+
+          <div class="col-lg-5">
+            <div class="wrap">
+              <h2 class="heading-section text-center mt-5">Contact Us</h2>
+              <div class="content-wrap p-4 p-md-5">
+                <form action="#">
+                  <div class="form-group mt-3">
+                    <input type="text" class="form-control" required />
+                    <label class="form-control-placeholder" for="name"
+                      >Name</label
+                    >
+                  </div>
+
+                  <div class="form-group mt-3">
+                    <input type="tel" class="form-control" required />
+                    <label class="form-control-placeholder" for="mobileNumber"
+                      >Mobile Number</label
+                    >
+                  </div>
+                  <div class="form-group mt-3">
+                    <input type="email" class="form-control" required />
+                    <label class="form-control-placeholder" for="email"
+                      >Email</label
+                    >
+                  </div>
+
+                  <div class="form-group mt-3">
+                    <input type="text" class="form-control" required />
+                    <label class="form-control-placeholder" for="subject"
+                      >Subject</label
+                    >
+                  </div>
+
+                  <div class="form-group mt-3">
+                    <textarea class="form-control" rows="4" required></textarea>
+                    <label class="form-control-placeholder" for="message"
+                      >Message</label
+                    >
+                  </div>
+                  <div class="form-group">
+                    <button
+                      type="submit"
+                      class="form-control btn btn-primary rounded submit px-3"
+                      style="background-color: #317873"
+                    >
+                      Send Message
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- contact us end -->
+        </div>
+      </div>
+    </div>
+    <!-- Contact End -->
+
+    <!-- Footer Start -->
+    <div
+      class="jumbotron-fluid text-light mt-2 wow fadeInUp"
+      data-wow-delay="0.1s"
+      style="background: linear-gradient(180deg, rgb(44, 43, 43), black)"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <div
+              id="footer-header"
+              class="d-flex flex-column align-items-center justify-content-center text-center h-100 p-4"
+            >
+              <a href="index.html" class="navbar-brand">
+                <h6 class="m-0 text-success" id="webAppName"></h6>
+                <br />
+                <img
+                  id="logoimage"
+                  alt="logo"
+                  src="./img/favicon (3).ico"
+                  style="width: 200px; height: 150px; border-radius: 20px"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-6">
+            <div class="row">
+              <div class="col-lg-7 col-md-12 pt-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h4 class="text-light mb-0">Get In Touch</h4>
+                </div>
+                <div class="d-flex mb-2 location-section">
+                  <i class="bi bi-geo-alt text-primary me-2"></i>
+                  <p class="mb-0 contact-data">
+                    Office No:14/390-F7 | 4th Floor KNA Plaza | Kundannoor Jn |
+                    Cochin PO Box : 682304 | Kerala - India
+                  </p>
+                </div>
+                <div class="d-flex mb-2 email-section">
+                  <i class="bi bi-envelope-open text-primary me-2"></i>
+                  <p class="mb-0 contact-data">example@gmail.com</p>
+                </div>
+                <div class="d-flex mb-2 phone-section2">
+                  <i class="bi bi-telephone text-primary me-2"></i>
+                  <p class="mb-0 contact-data2">0484-352872 / 3516220</p>
+                  <!-- <p class="mb-0 contact-data3"></p>
+                     <p class="mb-0 contact-data4"></p> -->
+                </div>
+                <div id="connectWithUsBanner" class="d-flex mt-4"></div>
+              </div>
+              <div class="col-lg-3 col-md-12 pt-0 pt-lg-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h4 class="text-light mb-0">Quick Links</h4>
+                </div>
+                <div
+                  class="link-animated d-flex flex-column justify-content-start"
+                >
+                  <a class="text-light mb-2" href="./index.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Home</a
+                  >
+                  <a class="text-light mb-2" href="./about.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>About
+                    Us</a
+                  >
+
+                  <a class="text-light mb-2" href="./contact.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Contact
+                    Us</a
+                  >
+                  <a class="text-light mb-2" href="./ourteam.html">
+                    <i class="bi bi-arrow-right text-primary me-2"></i>Our
+                    team</a
+                  >
+                  <a class="text-light mb-2" href="./corparateteam.html">
+                    <i class="bi bi-arrow-right text-primary me-2"></i>Corporate
+                    Team</a
+                  >
+                  <a class="text-light mb-2" href="./timelinje.html">
+                    <i class="bi bi-arrow-right text-primary me-2"></i
+                    >Timeline</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="jumbotron-fluid text-white" style="background: #3e3e3e">
+      <div class="container text-center">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-6">
+            <div
+              class="d-flex align-items-center justify-content-center"
+              style="height: 75px"
+            >
+              <p class="mb-0">
+                &copy; 2023 Hamad International Shipping Pvt. Ltd . All rights
+                reserved. Privacy Policy | Terms of Service
+                <a
+                  class="text-white border-bottom"
+                  href="#"
+                  id="footerMessage"
+                ></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+  </body>
+  <script src="js/script.js"></script>
+</html>
